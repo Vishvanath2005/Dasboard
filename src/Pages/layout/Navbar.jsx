@@ -4,7 +4,7 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 
 const Navbar = () => {
   return (
-    <div className=" my-5 flex justify-between items-center px-4">
+    <div className=" my-5 flex justify-between items-center px-6">
       <div className="font-Source Sans Pro  ">
         <div className="md:w-96 sm:w-60 w-36 flex gap-2 rounded-lg bg-white p-2 items-center  ">
           <IoSearchOutline className="text-xl font-semibold"/>

@@ -57,7 +57,7 @@ const Layout = () => {
                       }`}
               key={index}
             >
-              <p className={`${!open && `text-2xl`}`}>{menu.icon}</p>
+              <p className="text-2xl">{menu.icon}</p>
               <p className={`${!open && `hidden `}`}>{menu.title}</p>
             </li>
             </NavLink>

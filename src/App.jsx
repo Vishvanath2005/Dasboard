@@ -1,6 +1,7 @@
 import './App.css'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Layout from './Pages/layout/Layout'
+import Institution from './Pages/institution/Institution'
 
 function App() {
 
@@ -8,7 +9,9 @@ function App() {
     <>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Layout />}/>
+      <Route path='/' element={<Layout />}>
+      <Route path='/insitution' element={<Institution/>}/>
+      </Route>
     </Routes>
     </BrowserRouter>
         </>

@@ -3,7 +3,6 @@ import Title from "../../components/Title";
 import { MdOutlineEdit } from "react-icons/md";
 
 const Packages = () => {
-
   const data = [
     {
       id: 124,
@@ -24,8 +23,6 @@ const Packages = () => {
       status: "Inactive",
     },
   ];
-
-
   return (
     <div className="px-6 py-3">
       <Title title="Packages" />

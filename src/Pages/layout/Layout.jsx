@@ -29,7 +29,7 @@ const Layout = () => {
     { title: "Enquires", icon: <TbUserQuestion />, to: "/enquires" },
     { title: "Tickets", icon: <TbTicket />, to: "/tickets" },
     { title: "Packages", icon: <PiPackageDuotone />, to: "/packages" },
-    { title: "Users", icon: <FiUserPlus />, to: "/user" },
+    { title: "Users", icon: <FiUserPlus />, to: "/users" },
     { title: "Interview", icon: <TbMessagePlus />, to: "/interview" },
     { title: "Subscription", icon: <RiVipDiamondLine />, to: "/subscription" },
     { title: "Settings", icon: <TbSettings />, to: "/settings" },

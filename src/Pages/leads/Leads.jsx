@@ -4,7 +4,7 @@ import { HiArrowsUpDown } from "react-icons/hi2";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Pagination from '../../components/Pagination';
 
-const Institution = () => {
+const Leads = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [datas, setDatas] = useState([]);
   const itemsPerPage = 5;
@@ -20,41 +20,35 @@ const Institution = () => {
   const data = [
     {
       id: 124,
-      institutionId: "67890",
-      institutionName: "Anna University",
-      email: "john.doe@example.com",
-      spoc: "Priya",
-      credit: 200,
-      date: "19 June 24, 10.15 AM",
+      date_time: "19 June 24, 10.15 AM",
+      name: "Martin",
+      phone: "1234567890",
+      follow_up:"20",
       status: "Active",
     },
     {
       id: 125,
-      institutionId: "54321",
-      institutionName: "IIT Madras",
-      email: "jane.doe@example.com",
-      spoc: "Karthik",
-      credit: 150,
-      date: "19 June 24, 11.45 AM",
+      date_time: "19 June 24, 10.15 AM",
+      name: "Arun",
+      phone: "1122334455",
+      follow_up:"20",
       status: "Inactive",
     },
   ];
 
   return (
     <div className='px-6 py-3'>
-      <Title title="Institution" />
+      <Title title="Leads" />
       <div className="overflow-x-auto no-scrollbar drop-shadow-lg">
       <table className="w-full items-center hidden md:table rounded-lg border border-gray-200 overflow-hidden">
         <thead className="bg-gradient-to-b from-slate-100 to-gray-200 border-2 rounded-t-lg">
           <tr>
             {[
               "S.No",
-              "Institution ID",
-              "Institution Name",
-              "Email ID",
-              "SPOC Name",
-              "Credit",
-              "Date",
+              "Date & Time",
+              "Name",
+              "Phone Number",
+              "Follow-up",
               "Status",
               "Action",
             ].map((header) => (
@@ -79,25 +73,19 @@ const Institution = () => {
               <td className="py-3">
                 <p>{index + 1}</p>
               </td>
-              <td className="text-blue-500">
-                <p className="cursor-pointer">
-                  <u>{row.institutionId}</u>
+              <td >
+                <p >
+                 {row.date_time}
                 </p>
               </td>
               <td>
-                <p>{row.institutionName}</p>
+                <p>{row.name}</p>
               </td>
               <td>
-                <p>{row.email}</p>
+                <p>{row.phone}</p>
               </td>
               <td>
-                <p>{row.spoc}</p>
-              </td>
-              <td>
-                <p>{row.credit}</p>
-              </td>
-              <td>
-                <p>{row.date}</p>
+                <p>{row.follow_up}</p>
               </td>
               <td>
                 <p
@@ -134,4 +122,4 @@ const Institution = () => {
   )
 }
 
-export default Institution
+export default Leads

@@ -6,6 +6,7 @@ import Leads from './Pages/leads/Leads'
 import Enquires from './Pages/enquires/Enquires'
 import Tickets from './Pages/tickets/Tickets'
 import Users from './Pages/users/Users'
+import Interview from './Pages/interview/Interview'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <Route path='/enquires' element={<Enquires/>}/>
       <Route path='/tickets' element={<Tickets/>}/>
       <Route path='/users' element={<Users/>}/>
+      <Route path='/interview' element={<Interview/>}/>
       </Route>
     </Routes>
     </BrowserRouter>

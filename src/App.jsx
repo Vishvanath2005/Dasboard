@@ -8,6 +8,7 @@ import Tickets from './Pages/tickets/Tickets'
 import Users from './Pages/users/Users'
 import Interview from './Pages/interview/Interview'
 import Subscription from './Pages/subscription/Subscription'
+import Settings from './Pages/settings/Settings'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <Route path='/users' element={<Users/>}/>
       <Route path='/interview' element={<Interview/>}/>
       <Route path='/subscription' element={<Subscription/>}/>
+      <Route path='/settings' element={<Settings/>}/>
       </Route>
     </Routes>
     </BrowserRouter>

@@ -9,6 +9,7 @@ import Users from './Pages/users/Users'
 import Interview from './Pages/interview/Interview'
 import Subscription from './Pages/subscription/Subscription'
 import Settings from './Pages/settings/Settings'
+import Packages from './Pages/packages/Packages'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
       <Route path='/leads' element={<Leads/>}/>
       <Route path='/enquires' element={<Enquires/>}/>
       <Route path='/tickets' element={<Tickets/>}/>
+      <Route path='/packages' element={<Packages/>}/>
       <Route path='/users' element={<Users/>}/>
       <Route path='/interview' element={<Interview/>}/>
       <Route path='/subscription' element={<Subscription/>}/>

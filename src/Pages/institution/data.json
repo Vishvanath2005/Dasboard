@@ -1,0 +1,23 @@
+[
+    {
+      "id": 124,
+      "institutionId": "67890",
+      "institutionName": "Anna University",
+      "email": "john.doe@example.com",
+      "spoc": "Priya",
+      "credit": 200,
+      "date": "19 June 24, 10.15 AM",
+      "status": "Active"
+    },
+    {
+      "id": 125,
+      "institutionId": "54321",
+      "institutionName": "IIT Madras",
+      "email": "jane.doe@example.com",
+      "spoc": "Karthik",
+      "credit": 150,
+      "date": "19 June 24, 11.45 AM",
+      "status": "Inactive"
+    }
+  ]
+  

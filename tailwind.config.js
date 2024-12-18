@@ -8,7 +8,7 @@ export default {
     extend: {
       fontFamily:{
         'Roboto_Serif': ["Roboto Serif",'sans serif'],
-        'Source_Sans_Pro':["Source Code Pro", 'monospace'],
+        'Source_Sans_Pro':[ "Source Sans 3", 'serif'],
         'Exo':["Exo",'sans serif'],
             },
         colors:{

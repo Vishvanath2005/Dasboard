@@ -42,7 +42,7 @@ const Tickets = () => {
 
   return (
     <div className='px-6 py-3'>
-      <Title title="Tickets" />
+      <Title title="Tickets" showbutton={false} />
       <div className="overflow-x-auto no-scrollbar drop-shadow-lg">
       <table className="w-full items-center hidden md:table rounded-lg border border-gray-200 overflow-hidden">
         <thead className="bg-gradient-to-b from-slate-100 to-gray-200 border-2 rounded-t-lg">

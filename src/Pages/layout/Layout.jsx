@@ -51,7 +51,7 @@ const Layout = () => {
             className={` ${
               !open
                 ? `static flex justify-center  hover:bg-slate-200  `
-                : `absolute bg-orange rounded-full sm:left-44 rotate-180 left-[327px]`
+                : `absolute bg-orange rounded-full md:left-44 sm:left-44 rotate-180 left-[327px]`
             } top-16  duration-500   p-2`}
             onClick={() => {
               setOpen(!open);

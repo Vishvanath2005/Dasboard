@@ -18,7 +18,7 @@ const Institution = () => {
   const OpenAddModal = () => setAddModal(true);
   const CloseAddModal = () => setAddModal(false);
 
-  const itemsPerPage = 8;
+  const itemsPerPage = 7;
 
   useEffect(() => {
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -111,7 +111,7 @@ const Institution = () => {
                 </td>
                 <td>
                   <p
-                    className={`rounded-lg p-1 text-base font-semibold ${
+                    className={`rounded-lg p-1 m-2 text-base font-semibold ${
                       row.status === "Active"
                         ? "bg-green-100 text-green-700"
                         : "bg-red-100 text-red-700"

@@ -56,25 +56,22 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                 </button>
               </div>
             </div>
-            <div className="grid grid-cols-6 gap-3 p-3">
+            <div className="grid grid-cols-6 items-center p-3">
                 {onDataSend && (
                   [
                     { header: "Institution ID", value: onDataSend.id },
-                    {
-                      header: "Institution Name",
-                      value: onDataSend.institutionName,
-                    },
                     { header: "Email ID", value: onDataSend.email },
                     { header: "SPOC Name", value: onDataSend.spoc },
-                    { header: "Credit", value: onDataSend.credit },
-                    { header: "Date", value: onDataSend.date },
-                    { header: "Status", value: onDataSend.status },
+                    { header: "Address", value: onDataSend.address },
+                    { header: "District", value: onDataSend.district },
+                    { header: "State", value: onDataSend.state },
+                    { header: "SPOC Phone", value: onDataSend.spocPhoneNumber },
                   ].map(({ header, value }) => (
                     <React.Fragment key={header}>
-                      <label className="p-4 flex justify-between col-span-3  font-semibold text-start">
-                        <span>{header}</span> <span>:</span>
+                      <label className="p-3 col-span-3  font text-start">
+                        {header}
                       </label>
-                      <p className="p-4 col-span-3 flex">{value}</p>
+                      <p className="p-3 col-span-3 text-sm text-gray-500 text-end">{value}</p>
                     </React.Fragment>
                   ))
                 ) }
@@ -82,7 +79,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
               <div className="flex justify-center gap-5 py-5 border-t ">
                 <button
                   onClick={onClose}
-                  className="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300"
+                  className="px-4 py-2 border-orange border text-orange rounded-md"
                 >
                   Close
                 </button>
@@ -116,15 +113,16 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
             <div className="flex items-center justify-center p-4">
               <form onSubmit={handleSubmit(onSubmit)} className="grid gap-6">
                 <div className="grid grid-cols-3 gap-4 items-center">
-                  <label htmlFor="name" className="col-span-1 font-semibold text-gray-700">
+                  <label htmlFor="name" className="col-span-1 text-  text-gray-700">
                     Institution Name
                   </label>
                   <div className="col-span-2">
                     <input
                       id="name"
                       type="text"
+                      placeholder={`${onDataSend.institutionName}`}
                       {...register("institution_name")}
-                      className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
                         errors.institution_name
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -138,15 +136,16 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                   </div>
                 </div>
                 <div className="grid grid-cols-3 gap-4 items-center">
-                  <label htmlFor="email" className="col-span-1 font-semibold text-gray-700">
+                  <label htmlFor="email" className="col-span-1  text-gray-700">
                     Email
                   </label>
                   <div className="col-span-2">
                     <input
                       id="email"
                       type="email"
+                      placeholder={`${onDataSend.email}`}
                       {...register("email")}
-                      className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
                         errors.email
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -159,7 +158,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     )}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4 font-semibold items-center">
+                <div className="grid grid-cols-3 gap-4  items-center">
                   <label htmlFor="address" className="col-span-1 text-gray-700">
                     Address
                   </label>
@@ -167,8 +166,9 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     <input
                       id="address"
                       type="text"
+                      placeholder={`${onDataSend.address}`}
                       {...register("address")}
-                      className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
                         errors.address
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -181,7 +181,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     )}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4 font-semibold items-center">
+                <div className="grid grid-cols-3 gap-4  items-center">
                   <label
                     htmlFor="district"
                     className="col-span-1 text-gray-700"
@@ -192,8 +192,9 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     <input
                       id="district"
                       type="text"
+                      placeholder={`${onDataSend.district}`}
                       {...register("district")}
-                      className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
                         errors.district
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -206,7 +207,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     )}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4 font-semibold items-center">
+                <div className="grid grid-cols-3 gap-4  items-center">
                   <label htmlFor="state" className="col-span-1 text-gray-700">
                     State
                   </label>
@@ -214,8 +215,9 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     <input
                       id="state"
                       type="text"
+                      placeholder={`${onDataSend.state}`}
                       {...register("state")}
-                      className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
                         errors.state
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -228,7 +230,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     )}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4 font-semibold items-center">
+                <div className="grid grid-cols-3 gap-4  items-center">
                   <label
                     htmlFor="SPOC_name"
                     className="col-span-1 text-gray-700"
@@ -239,8 +241,9 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     <input
                       id="SPOC_name"
                       type="text"
+                      placeholder={`${onDataSend.spoc}`}
                       {...register("SPOC_name")}
-                      className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
                         errors.SPOC_name
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -253,19 +256,20 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     )}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4 font-semibold items-center">
+                <div className="grid grid-cols-3 gap-4  items-center">
                   <label
                     htmlFor="SPOC_phone"
                     className="col-span-1 text-gray-700"
                   >
-                    SPOC Phone Number
+                    SPOC Phone
                   </label>
                   <div className="col-span-2">
                     <input
                       id="SPOC_phone"
                       type="text"
+                      placeholder={`${onDataSend.spocPhoneNumberp}`}
                       {...register("SPOC_phone")}
-                      className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
                         errors.SPOC_phone
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -279,7 +283,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                   </div>
                 </div>
 
-                <div className="flex justify-center gap-3 items-center">
+                <div className="flex justify-center -mx-7 pt-4 border-t gap-3 items-center">
                   <button
                     type="button"
                     onClick={Back}
@@ -295,7 +299,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     }`}
                     disabled={!isValid}
                   >
-                    Submit
+                    Save
                   </button>
                 </div>
               </form>

@@ -4,29 +4,31 @@ import AddInstitution from "../institution/AddInstitution";
 import { HiArrowsUpDown } from "react-icons/hi2";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Pagination from "../../components/Pagination";
-import data from "../institution/data.json";
 import VE_Institution from "./VE_Institution";
+import Data from "../institution/InstitutionData.json"
 
 const Institution = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [addModal, setAddModal] = useState(false);
   const [view_editModal, setView_editModal] = useState(false);
   const [selectedData, setSelectedData] = useState(null);
-  const [datas, setDatas] = useState([]);
+  const [data, setData] = useState([]);
   const OpenVEModal = () => setView_editModal(true);
   const CloseVEModal = () => setView_editModal(false);
   const OpenAddModal = () => setAddModal(true);
   const CloseAddModal = () => setAddModal(false);
 
-  const itemsPerPage = 5;
+  const itemsPerPage = 8;
+
   useEffect(() => {
     const startIndex = (currentPage - 1) * itemsPerPage;
-    const selectedData = data.slice(startIndex, startIndex + itemsPerPage);
-    setDatas(selectedData);
+    const selectedData = Data.slice(startIndex, startIndex + itemsPerPage);
+    setData(selectedData);
   }, [currentPage]);
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+  
 
   const handleSelectData = (id) => {
     const selected = data.find((row) => row.id === id);
@@ -79,14 +81,14 @@ const Institution = () => {
                 className="text-sm text-center bg-white text-table-text border-b-2 last:rounded-b-lg"
               >
                 <td className="py-3">
-                  <p>{index + 1}</p>
+                  <p>{(currentPage - 1) * itemsPerPage + index + 1}</p>
                 </td>
                 <td className="text-blue-500">
                   <p
                     className="cursor-pointer"
                     onClick={() => {
-                      handleSelectData(row.id); // Select data
-                      OpenVEModal(); // Open modal
+                      handleSelectData(row.id); 
+                      OpenVEModal();
                     }}
                   >
                     <u>{row.institutionId}</u>
@@ -132,7 +134,7 @@ const Institution = () => {
         </table>
       </div>
       <Pagination
-        totalItems={data.length}
+        totalItems={Data.length}
         itemsPerPage={itemsPerPage}
         currentPage={currentPage}
         onPageChange={handlePageChange}

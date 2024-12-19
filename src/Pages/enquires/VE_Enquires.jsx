@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Institution_Schema } from "./Instution_Schema";
+import { Enquries_Schema } from "./Enquries_Schema";
 
-const VE_Institution = ({ title, onClose, onDataSend }) => {
+const VE_Enquires = ({ title, onClose, onDataSend }) => {
   const [isFirstModalOpen, setIsFirstModalOpen] = useState(true);
   const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
 
@@ -29,12 +29,13 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
     handleSubmit,
     formState: { errors, isValid },
   } = useForm({
-    resolver: yupResolver(Institution_Schema),
-    mode: "onChange",
+    resolver: yupResolver(Enquries_Schema),
+    mode: "all",
   });
 
   const onSubmit = (data) => {
-    console.log("Form Data:", data);
+    console.log("Data:", data);
+    console.log("Form Data:", JSON.stringify(data));
     onClose();
   };
 
@@ -59,20 +60,33 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
             <div className="grid grid-cols-6 items-center p-3">
               {onDataSend &&
                 [
-                  { header: "Institution ID", value: onDataSend.id },
+                  { header: "Name", value: onDataSend.name },
+                  { header: "Phone Number", value: onDataSend.phone },
                   { header: "Email ID", value: onDataSend.email },
-                  { header: "SPOC Name", value: onDataSend.spoc },
-                  { header: "Address", value: onDataSend.address },
-                  { header: "District", value: onDataSend.district },
-                  { header: "State", value: onDataSend.state },
-                  { header: "SPOC Phone", value: onDataSend.spocPhoneNumber },
+                  { header: "Institution", value: onDataSend.institution },
+                  { header: "Subject", value: onDataSend.subject },
+                  { header: "Status", value: onDataSend.status },
+                  { header: "Date", value: onDataSend.date },
+                  { header: "Note", value: onDataSend.note },
                 ].map(({ header, value }) => (
                   <React.Fragment key={header}>
                     <label className="p-3 col-span-3  font text-start">
                       {header}
                     </label>
-                    <p className="p-3 col-span-3 text-sm text-gray-500 text-end">
-                      {value}
+                    <p className={`p-3 col-span-3 text-end text-sm `}>
+                      <span
+                        className={`${
+                          header === "Status"
+                            ? `text-end p-2 rounded-md font-medium ${
+                                value === "Active"
+                                  ? "bg-green-100 text-green-700"
+                                  : "bg-red-100 text-red-700"
+                              }`
+                            : "text-gray-500 text-end"
+                        }`}
+                      >
+                        {value}
+                      </span>
                     </p>
                   </React.Fragment>
                 ))}
@@ -97,7 +111,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
 
       {isSecondModalOpen && (
         <div className="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg shadow-lg w-full max-w-md">
+          <div className="bg-white rounded-lg shadow-lg w-full max-w-md ">
             <div className=" items-center relative border-b px-4 py-6">
               <p className="text-xl text-center font-Source_Sans_Pro font-medium">
                 Edit {title}
@@ -111,45 +125,71 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                 </button>
               </div>
             </div>
-            <div className="flex items-center justify-center p-4">
-              <form onSubmit={handleSubmit(onSubmit)} className="grid gap-6">
+            <div className="flex items-center justify-center py-4">
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="grid gap-4 w-full px-6 "
+              >
                 <div className="grid grid-cols-3 gap-4 items-center">
                   <label
                     htmlFor="name"
-                    className="col-span-1 text-  text-gray-700"
+                    className="col-span-1 text-start text-gray-700"
                   >
-                    Institution Name
+                    Name
                   </label>
                   <div className="col-span-2">
                     <input
                       id="name"
                       type="text"
-                      placeholder={`${onDataSend.institutionName}`}
+                      placeholder={onDataSend.name}
                       {...register("institution_name")}
                       className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
-                        errors.institution_name
+                        errors.name
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
                       }`}
                     />
-                    {errors.institution_name && (
+                    {errors.name && (
                       <p className="text-sm text-red-500 mt-1">
-                        {errors.institution_name.message}
+                        {errors.name.message}
                       </p>
                     )}
                   </div>
                 </div>
                 <div className="grid grid-cols-3 gap-4 items-center">
-                  <label htmlFor="email" className="col-span-1  text-gray-700">
+                  <label htmlFor="phone" className="col-span-1 text-gray-700">
+                    Phone Number
+                  </label>
+                  <div className="col-span-2">
+                    <input
+                      id="phone"
+                      type="text"
+                      placeholder={onDataSend.phone}
+                      {...register("phone")}
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                        errors.phone
+                          ? "border-red-500 focus:ring-red-300"
+                          : "border-gray-300 focus:ring-blue-300"
+                      }`}
+                    />
+                    {errors.phone && (
+                      <p className="text-sm text-red-500 mt-1">
+                        {errors.phone.message}
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <div className="grid grid-cols-3 gap-4 items-center">
+                  <label htmlFor="email" className="col-span-1 text-gray-700">
                     Email
                   </label>
                   <div className="col-span-2">
                     <input
                       id="email"
                       type="email"
-                      placeholder={`${onDataSend.email}`}
+                      placeholder={onDataSend.email}
                       {...register("email")}
-                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
                         errors.email
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -162,132 +202,131 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     )}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4  items-center">
-                  <label htmlFor="address" className="col-span-1 text-gray-700">
-                    Address
+                <div className="grid grid-cols-3 gap-4 items-center">
+                  <label
+                    htmlFor="institution"
+                    className="col-span-1 text-gray-700"
+                  >
+                    Institution
                   </label>
                   <div className="col-span-2">
                     <input
-                      id="address"
+                      id="institution"
                       type="text"
-                      placeholder={`${onDataSend.address}`}
-                      {...register("address")}
-                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      placeholder={onDataSend.institution}
+                      {...register("institution")}
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
                         errors.address
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
                       }`}
                     />
-                    {errors.address && (
+                    {errors.institution && (
                       <p className="text-sm text-red-500 mt-1">
-                        {errors.address.message}
+                        {errors.institution.message}
                       </p>
                     )}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4  items-center">
-                  <label
-                    htmlFor="district"
-                    className="col-span-1 text-gray-700"
-                  >
-                    District
+                <div className="grid grid-cols-3 gap-4 items-center">
+                  <label htmlFor="subject" className="col-span-1 text-gray-700">
+                    Subject
                   </label>
                   <div className="col-span-2">
                     <input
-                      id="district"
+                      id="subject"
                       type="text"
-                      placeholder={`${onDataSend.district}`}
-                      {...register("district")}
+                      placeholder={onDataSend.subject}
+                      {...register("subject")}
                       className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
-                        errors.district
+                        errors.subject
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
                       }`}
                     />
-                    {errors.district && (
+                    {errors.subject && (
                       <p className="text-sm text-red-500 mt-1">
-                        {errors.district.message}
+                        {errors.subject.message}
                       </p>
                     )}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4  items-center">
-                  <label htmlFor="state" className="col-span-1 text-gray-700">
-                    State
+                <div className="grid grid-cols-3 gap-4 items-center">
+                  <label htmlFor="status" className="col-span-1 text-gray-700">
+                    Status
                   </label>
                   <div className="col-span-2">
-                    <input
-                      id="state"
-                      type="text"
-                      placeholder={`${onDataSend.state}`}
-                      {...register("state")}
-                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
-                        errors.state
-                          ? "border-red-500 focus:ring-red-300"
-                          : "border-gray-300 focus:ring-blue-300"
-                      }`}
-                    />
-                    {errors.state && (
-                      <p className="text-sm text-red-500 mt-1">
-                        {errors.state.message}
-                      </p>
-                    )}
-                  </div>
-                </div>
-                <div className="grid grid-cols-3 gap-4  items-center">
-                  <label
-                    htmlFor="SPOC_name"
-                    className="col-span-1 text-gray-700"
-                  >
-                    SPOC Name
-                  </label>
-                  <div className="col-span-2">
-                    <input
-                      id="SPOC_name"
-                      type="text"
-                      placeholder={`${onDataSend.spoc}`}
-                      {...register("SPOC_name")}
-                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
-                        errors.SPOC_name
-                          ? "border-red-500 focus:ring-red-300"
-                          : "border-gray-300 focus:ring-blue-300"
-                      }`}
-                    />
-                    {errors.SPOC_name && (
-                      <p className="text-sm text-red-500 mt-1">
-                        {errors.SPOC_name.message}
-                      </p>
-                    )}
-                  </div>
-                </div>
-                <div className="grid grid-cols-3 gap-4  items-center">
-                  <label
-                    htmlFor="SPOC_phone"
-                    className="col-span-1 text-gray-700"
-                  >
-                    SPOC Phone
-                  </label>
-                  <div className="col-span-2">
-                    <input
-                      id="SPOC_phone"
-                      type="text"
-                      placeholder={`${onDataSend.spocPhoneNumber}`}
-                      {...register("SPOC_phone")}
+                    <select
+                      id="status"
+                      {...register("status")}
                       className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
-                        errors.SPOC_phone
+                        errors.status
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
                       }`}
-                    />
-                    {errors.SPOC_phone && (
+                    >
+                      <option value="" disabled selected>
+                        {onDataSend.status || "Select a status"}
+                      </option>
+                      <option value="active">Active</option>
+                      <option value="inactive">Inactive</option>
+                      <option value="pending">Pending</option>
+                      <option value="completed">Completed</option>
+                    </select>
+                    {errors.status && (
                       <p className="text-sm text-red-500 mt-1">
-                        {errors.SPOC_phone.message}
+                        {errors.status.message}
                       </p>
                     )}
                   </div>
                 </div>
-
-                <div className="flex justify-center -mx-7 pt-4 border-t gap-3 items-center">
+                <div className="grid grid-cols-3 gap-4 items-center">
+                  <label htmlFor="date" className="col-span-1 text-gray-700">
+                    Date
+                  </label>
+                  <div className="col-span-2">
+                    <input
+                      id="date"
+                      type="date"
+                      placeholder={onDataSend.date}
+                      {...register("date")}
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                        errors.date
+                          ? "border-red-500 focus:ring-red-300"
+                          : "border-gray-300 focus:ring-blue-300"
+                      }`}
+                    />
+                    {errors.date && (
+                      <p className="text-sm text-red-500 mt-1">
+                        {errors.date.message}
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <div className="grid grid-cols-3 gap-4 items-center">
+                  <label htmlFor="note" className="col-span-1 text-gray-700">
+                    Note
+                  </label>
+                  <div className="col-span-2">
+                    <textarea
+                      id="note"
+                      placeholder={onDataSend.note}
+                      {...register("note")}
+                      rows="4"
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                        errors.note
+                          ? "border-red-500 focus:ring-red-300"
+                          : "border-gray-300 focus:ring-blue-300"
+                      }`}
+                    />
+                    {errors.note && (
+                      <p className="text-sm text-red-500 mt-1">
+                        {errors.note.message}
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <div className="flex justify-center gap-4 pt-4 -mx-6 border-t">
                   <button
                     type="button"
                     onClick={Back}
@@ -295,11 +334,10 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                   >
                     Close
                   </button>
-
                   <button
                     type="submit"
-                    className={`w-fit bg-orange text-white py-2 px-4 rounded-lg transition duration-200 ${
-                      !isValid && `opacity-50 cursor-not-allowed`
+                    className={`px-6 py-2 bg-orange text-white rounded-lg transition duration-200 ${
+                      !isValid ? "opacity-50 cursor-not-allowed" : ""
                     }`}
                     disabled={!isValid}
                   >
@@ -315,4 +353,4 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
   );
 };
 
-export default VE_Institution;
+export default VE_Enquires;

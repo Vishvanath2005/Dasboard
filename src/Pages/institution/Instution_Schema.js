@@ -1,7 +1,7 @@
 // validationSchema.js
 import * as Yup from "yup";
 
-export const validationSchema = Yup.object({
+export const Institution_Schema = Yup.object({
   institution_name: Yup.string()
     .required("Name is required")
     .min(2, "Name must be at least 2 characters"),
@@ -21,6 +21,6 @@ export const validationSchema = Yup.object({
     .required("Name is required")
     .min(2, "Name must be at least 2 characters"),
   SPOC_phone: Yup.string()
-    .required("Name is required")
-    .min(2, "Name must be at least 2 characters"),
+      .required("Phone is required")
+      .matches(/^[0-9]+$/, "Phone number must be numeric"),
 });

@@ -5,7 +5,7 @@ import { HiArrowsUpDown } from "react-icons/hi2";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Pagination from "../../components/Pagination";
 import VE_Institution from "./VE_Institution";
-import Data from "../institution/InstitutionData.json"
+import Data from "../institution/InstitutionData.json";
 
 const Institution = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -28,7 +28,6 @@ const Institution = () => {
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-  
 
   const handleSelectData = (id) => {
     const selected = data.find((row) => row.id === id);
@@ -87,7 +86,7 @@ const Institution = () => {
                   <p
                     className="cursor-pointer"
                     onClick={() => {
-                      handleSelectData(row.id); 
+                      handleSelectData(row.id);
                       OpenVEModal();
                     }}
                   >

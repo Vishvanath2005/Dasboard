@@ -1,31 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Title from "../../components/Title";
 import { MdOutlineEdit } from "react-icons/md";
+import data from './PackagesData.json'
+import AddPackages from "./AddPackages";
 
 const Packages = () => {
-  const data = [
-    {
-      id: 124,
-      packageName: "Starter",
-      pricing: "Free",
-      credit: 200,
-      description: "Beginners",
-      lastUpdate: "19 June 24, 10.15 AM",
-      status: "Active",
-    },
-    {
-      id: 125,
-      packageName: "Premium",
-      pricing: "$49",
-      credit: 500,
-      description: "Businesses",
-      lastUpdate: "18 June 24, 02.23 PM",
-      status: "Inactive",
-    },
-  ];
+    const [addModal, setAddModal] = useState(false);
+  
+    const OpenAddModal = () => setAddModal(true);
+    const CloseAddModal = () => setAddModal(false);
+
+    const onSubmit = (data) => {
+      console.log("Form Data:", data);
+      CloseAddModal();
+      CloseVEModal();
+    };
+
   return (
     <div className="px-6 py-3">
-      <Title title="Packages" />
+      <Title title="Packages"
+      onOpen={OpenAddModal}  />
       <div className="grid grid-cols-12 gap-4">
         {data.map((row) => (
           <div
@@ -71,6 +65,9 @@ const Packages = () => {
           </div>
         ))}
       </div>
+      {addModal && (
+        <AddPackages onClose={CloseAddModal} onClick={onSubmit} />
+      )}
     </div>
   );
 };

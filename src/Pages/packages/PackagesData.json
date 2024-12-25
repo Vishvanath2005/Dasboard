@@ -1,0 +1,20 @@
+[
+  {
+    "id": 124,
+    "packageName": "Starter",
+    "pricing": "Free",
+    "credit": 200,
+    "description": "Beginners",
+    "lastUpdate": "19 June 24, 10.15 AM",
+    "status": "Active"
+  },
+  {
+    "id": 125,
+    "packageName": "Premium",
+    "pricing": "$49",
+    "credit": 500,
+    "description": "Businesses",
+    "lastUpdate": "18 June 24, 02.23 PM",
+    "status": "Inactive"
+  }
+]

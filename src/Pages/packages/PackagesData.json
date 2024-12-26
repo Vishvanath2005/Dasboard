@@ -16,5 +16,77 @@
     "description": "Businesses",
     "lastUpdate": "18 June 24, 02.23 PM",
     "status": "Inactive"
+  },
+  {
+    "id": 126,
+    "packageName": "Pro",
+    "pricing": "$99",
+    "credit": 1000,
+    "description": "Professionals",
+    "lastUpdate": "17 June 24, 11.00 AM",
+    "status": "Active"
+  },
+  {
+    "id": 127,
+    "packageName": "Enterprise",
+    "pricing": "$199",
+    "credit": 2500,
+    "description": "Large Enterprises",
+    "lastUpdate": "16 June 24, 05.45 PM",
+    "status": "Active"
+  },
+  {
+    "id": 128,
+    "packageName": "Basic",
+    "pricing": "$19",
+    "credit": 150,
+    "description": "Entry-level package",
+    "lastUpdate": "15 June 24, 09.30 AM",
+    "status": "Inactive"
+  },
+  {
+    "id": 129,
+    "packageName": "Ultimate",
+    "pricing": "$299",
+    "credit": 5000,
+    "description": "All-inclusive package",
+    "lastUpdate": "14 June 24, 01.00 PM",
+    "status": "Active"
+  },
+  {
+    "id": 130,
+    "packageName": "Lite",
+    "pricing": "$9",
+    "credit": 50,
+    "description": "For minimal needs",
+    "lastUpdate": "13 June 24, 04.30 PM",
+    "status": "Inactive"
+  },
+  {
+    "id": 131,
+    "packageName": "Advanced",
+    "pricing": "$79",
+    "credit": 750,
+    "description": "For advanced users",
+    "lastUpdate": "12 June 24, 10.15 AM",
+    "status": "Active"
+  },
+  {
+    "id": 132,
+    "packageName": "Standard",
+    "pricing": "$39",
+    "credit": 300,
+    "description": "Mid-tier package",
+    "lastUpdate": "11 June 24, 02.50 PM",
+    "status": "Inactive"
+  },
+  {
+    "id": 133,
+    "packageName": "Custom",
+    "pricing": "Varies",
+    "credit": 0,
+    "description": "Tailored solutions",
+    "lastUpdate": "10 June 24, 06.00 PM",
+    "status": "Active"
   }
 ]

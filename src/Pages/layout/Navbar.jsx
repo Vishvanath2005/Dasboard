@@ -27,7 +27,9 @@ const Navbar = () => {
           V
         </p>
         <div>
-          <p className="sm:text-xl text-sm font-semibold font-Exo">Profile Name</p>
+          <p className="sm:text-xl text-sm font-semibold font-Exo">
+            Profile Name
+          </p>
           <p className="sm:text-sm text-xs text-gray-400 font-Source Sans Pro">
             Profile Role
           </p>

@@ -3,24 +3,37 @@ import Title from "../../components/Title";
 import { MdOutlineEdit } from "react-icons/md";
 import data from './PackagesData.json'
 import AddPackages from "./AddPackages";
+import EditPackages from "./EditPackages";
 
 const Packages = () => {
     const [addModal, setAddModal] = useState(false);
+    const [editModal, setEditModal] = useState(false);
+      const [selectedData, setSelectedData] = useState(null);
+    
   
     const OpenAddModal = () => setAddModal(true);
     const CloseAddModal = () => setAddModal(false);
 
+    const OpenEditModal = () => setEditModal(true);
+    const CloseEditModal = () => setEditModal(false);
+
     const onSubmit = (data) => {
       console.log("Form Data:", data);
       CloseAddModal();
-      CloseVEModal();
+      CloseEditModal();
+    };
+
+    const handleSelectData = (id) => {
+      const selected = data.find((packages) => packages.id === id);
+      setSelectedData(selected);
+      console.log(selected);
     };
 
   return (
     <div className="px-6 py-3">
       <Title title="Packages"
       onOpen={OpenAddModal}  />
-      <div className="grid grid-cols-12 gap-4">
+      <div className="grid grid-cols-12  gap-4">
         {data.map((row) => (
           <div
             key={row.id}
@@ -39,6 +52,9 @@ const Packages = () => {
               <button
                 className="bg-green-100 hover:bg-green-200 p-1 rounded-md"
                 aria-label="Edit"
+                onClick={()=>{OpenEditModal()
+handleSelectData(row.id)
+                }}
               >
                 <MdOutlineEdit className="text-green-800 text-xl" />
               </button>
@@ -68,6 +84,7 @@ const Packages = () => {
       {addModal && (
         <AddPackages onClose={CloseAddModal} onClick={onSubmit} />
       )}
+      {editModal && (<EditPackages onClose={CloseEditModal} onClick={onSubmit} onSendData={selectedData}/> )}
     </div>
   );
 };

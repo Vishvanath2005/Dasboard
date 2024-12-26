@@ -30,7 +30,7 @@ const Institution = () => {
   };
 
   const handleSelectData = (id) => {
-    const selected = data.find((row) => row.id === id);
+    const selected = data.find((institution) => institution.id === id);
     setSelectedData(selected);
     console.log(selected);
   };
@@ -50,7 +50,7 @@ const Institution = () => {
   return (
     <div className="px-6 py-3">
       <Title title="Institution" onOpen={OpenAddModal} />
-      <div className="overflow-x-auto no-scrollbar drop-shadow-lg">
+      <div className="overflow-x-auto drop-shadow-lg">
         <table className="w-full items-center hidden md:table rounded-lg border border-gray-200 overflow-hidden">
           <thead className="bg-gradient-to-b from-slate-100 to-gray-200 border-2 rounded-t-lg">
             <tr>
@@ -74,9 +74,9 @@ const Institution = () => {
             </tr>
           </thead>
           <tbody className="rounded-lg">
-            {data.map((row, index) => (
+            {data.map((institution, index) => (
               <tr
-                key={row.id}
+                key={institution.id}
                 className="text-sm text-center bg-white text-table-text border-b-2 last:rounded-b-lg"
               >
                 <td className="py-3">
@@ -86,37 +86,37 @@ const Institution = () => {
                   <p
                     className="cursor-pointer"
                     onClick={() => {
-                      handleSelectData(row.id);
+                      handleSelectData(institution.id);
                       OpenVEModal();
                     }}
                   >
-                    <u>{row.institutionId}</u>
+                    <u>{institution.institutionId}</u>
                   </p>
                 </td>
                 <td>
-                  <p>{row.institutionName}</p>
+                  <p>{institution.institutionName}</p>
                 </td>
                 <td>
-                  <p>{row.email}</p>
+                  <p>{institution.email}</p>
                 </td>
                 <td>
-                  <p>{row.spoc}</p>
+                  <p>{institution.spoc}</p>
                 </td>
                 <td>
-                  <p>{row.credit}</p>
+                  <p>{institution.credit}</p>
                 </td>
                 <td>
-                  <p>{row.date}</p>
+                  <p>{institution.date}</p>
                 </td>
                 <td>
                   <p
                     className={`rounded-lg p-1 m-2 text-base font-semibold ${
-                      row.status === "Active"
+                      institution.status === "Active"
                         ? "bg-green-100 text-green-700"
                         : "bg-red-100 text-red-700"
                     }`}
                   >
-                    {row.status}
+                    {institution.status}
                   </p>
                 </td>
                 <td>

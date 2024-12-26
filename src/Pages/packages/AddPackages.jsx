@@ -35,12 +35,12 @@ const AddPackages = ({ onClose }) => {
               </button>
             </div>
           </div>
-          <div className="flex items-center justify-center p-4">
+          <div className="flex items-center justify-center py-4">
             <form onSubmit={handleSubmit(onSubmit)} className="grid gap-6">
               <div className="grid grid-cols-3 gap-4 items-center">
                 <label
                   htmlFor="name"
-                  className="col-span-1 text-  text-gray-700"
+                  className="col-span-1 text-start  text-gray-700"
                 >
                   Package Name
                 </label>
@@ -132,7 +132,7 @@ const AddPackages = ({ onClose }) => {
                     )}
                   </div>
                 </div>
-              <div className="flex justify-center -mx-7 pt-4 border-t gap-3 items-center">
+              <div className="flex justify-center -mx-12 pt-4 border-t gap-3 items-center">
                 <button
                   type="button"
                   onClick={onClose}

@@ -27,13 +27,14 @@ const Layout = () => {
     },
     { title: "Leads", icon: <GoPeople />, to: "/leads" },
     { title: "Enquires", icon: <TbUserQuestion />, to: "/enquires" },
-    { title: "Tickets", icon: <TbTicket />, to: "/tickets" },
+    { title: "Tickets", icon: <TbTicket />, to: "/tickets" }, // Main Tickets route
     { title: "Packages", icon: <PiPackageDuotone />, to: "/packages" },
     { title: "Users", icon: <FiUserPlus />, to: "/users" },
     { title: "Interview", icon: <TbMessagePlus />, to: "/interview" },
     { title: "Subscription", icon: <RiVipDiamondLine />, to: "/subscription" },
     { title: "Settings", icon: <TbSettings />, to: "/settings" },
   ];
+
   return (
     <div>
       <div className="flex">
@@ -69,7 +70,9 @@ const Layout = () => {
                     className={`${
                       !open ? `justify-center` : `pl-10`
                     } cursor-pointer text-md flex items-center font-medium font-Source Sans Pro gap-x-3 p-3 mt-1  transition-all duration-300 hover:bg-blue-100 hover:text-blue-500  ${
-                      location.pathname === menu.to
+                      location.pathname.startsWith(menu.to) ||
+                      (menu.to === "/tickets" &&
+                        location.pathname.startsWith("/tickets/assign_tickets"))
                         ? `${
                             open
                               ? "bg-select-sidebar  border-r-8 border-orange text-blue-500 transition-all duration-300"
@@ -97,4 +100,5 @@ const Layout = () => {
     </div>
   );
 };
+
 export default Layout;

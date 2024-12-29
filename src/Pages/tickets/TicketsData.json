@@ -1,0 +1,69 @@
+[
+    {
+        "id": 201,
+        "ticketId": "34567",
+        "ticketName": "Tech Corp",
+        "complaint": "Network Issue",
+        "priority": "medium",
+        "email": "jane.smith@techcorp.com",
+        "date_time": "20 June 24, 3:45 PM",
+        "status": "Active",
+        "assign": "Assigned to Team A",
+        "history": [
+            { "dateTime": "20 June 24, 2:30 PM", "action": "Ticket Created by Jane Smith" },
+            { "dateTime": "20 June 24, 2:45 PM", "action": "Assigned to Team A" },
+            { "dateTime": "20 June 24, 3:00 PM", "action": "Work Started by Team A" }
+        ],
+        "note": "The issue is related to network connectivity, awaiting resolution."
+    },
+    {
+        "id": 202,
+        "ticketId": "34567",
+        "ticketName": "Tech Corp",
+        "complaint": "Login Failure",
+        "priority": "high",
+        "email": "jane.smith@techcorp.com",
+        "date_time": "20 June 24, 4:00 PM",
+        "status": "Inactive",
+        "assign": "Assigned to Team B",
+        "history": [
+            { "dateTime": "20 June 24, 3:45 PM", "action": "Ticket Created by Jane Smith" },
+            { "dateTime": "20 June 24, 3:50 PM", "action": "Assigned to Team B" },
+            { "dateTime": "20 June 24, 4:00 PM", "action": "Work Completed by Team B" }
+        ],
+        "note": "The login failure was resolved after resetting the password."
+    },
+    {
+        "id": 203,
+        "ticketId": "45678",
+        "ticketName": "EduWorks",
+        "complaint": "Software Installation",
+        "priority": "low",
+        "email": "mike.brown@eduworks.edu",
+        "date_time": "21 June 24, 11:30 AM",
+        "status": "Active",
+        "assign": "Unassigned",
+        "history": [
+            { "dateTime": "21 June 24, 10:45 AM", "action": "Ticket Created by Mike Brown" },
+            { "dateTime": "21 June 24, 11:00 AM", "action": "Awaiting Assignment" }
+        ],
+        "note": "The installation process is pending assignment to the IT team."
+    },
+    {
+        "id": 204,
+        "ticketId": "45678",
+        "ticketName": "EduWorks",
+        "complaint": "Access Denied",
+        "priority": "medium",
+        "email": "mike.brown@eduworks.edu",
+        "date_time": "21 June 24, 12:15 PM",
+        "status": "Inactive",
+        "assign": "Assigned to IT Team",
+        "history": [
+            { "dateTime": "21 June 24, 11:30 AM", "action": "Ticket Created by Mike Brown" },
+            { "dateTime": "21 June 24, 11:45 AM", "action": "Assigned to IT Team" },
+            { "dateTime": "21 June 24, 12:15 PM", "action": "Work Completed by IT Team" }
+        ],
+        "note": "The access denied issue was fixed after server permissions were updated."
+    }
+]

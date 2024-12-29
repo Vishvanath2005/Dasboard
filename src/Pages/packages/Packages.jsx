@@ -33,7 +33,7 @@ const Packages = () => {
     <div className="px-6 py-3">
       <Title title="Packages"
       onOpen={OpenAddModal}  />
-      <div className="grid grid-cols-12  gap-4">
+      <div className="grid grid-cols-12 gap-4">
         {data.map((row) => (
           <div
             key={row.id}

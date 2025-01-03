@@ -1,7 +1,6 @@
 import * as yup from "yup";
 
 export const Interview_Schema = yup.object({
-  id: yup.number().required("ID is required"),
   interviewId: yup.string().required("Interview ID is required"),
   roomNo: yup.string().required("Room number is required"),
   userId: yup.string().required("User ID is required"),
@@ -9,13 +8,7 @@ export const Interview_Schema = yup.object({
     .string()
     .required("User name is required")
     .min(2, "User name must be at least 2 characters"),
-  date: yup
-    .string()
-    .required("Date is required")
-    .matches(
-      /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/,
-      "Date must follow the format: MM/DD/YYYY"
-    ),
+  
   slot_Time: yup
     .string()
     .required("Slot time is required")

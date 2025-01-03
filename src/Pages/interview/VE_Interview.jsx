@@ -24,30 +24,14 @@ const VE_Interview = ({ title, onClose, onDataSend }) => {
     handleOpenFirstModal();
   };
 
-  const defaultValues = {
-    interviewId: onDataSend?.interviewId || "",
-    roomNo: onDataSend?.roomNo || "",
-    userId: onDataSend?.userId || "",
-    userName: onDataSend?.userName || "",
-    date: onDataSend?.date || "",
-    slot_Time: onDataSend?.slot_Time || "",
-    status: onDataSend?.status || "",
-  };
-
   const {
     register,
     handleSubmit,
     formState: { errors, isValid },
-    reset,
   } = useForm({
     resolver: yupResolver(Interview_Schema),
     mode: "onChange",
-    defaultValues,
   });
-
-  useEffect(() => {
-    reset(defaultValues);
-  }, [onDataSend, reset]);
 
   const onSubmit = (data) => {
     console.log("Form Data:", data);
@@ -74,13 +58,33 @@ const VE_Interview = ({ title, onClose, onDataSend }) => {
             </div>
             <div className="grid grid-cols-6 items-center p-3">
               {onDataSend &&
-                Object.entries(onDataSend).map(([key, value]) => (
-                  <React.Fragment key={key}>
-                    <label className="p-3 col-span-3 text-start capitalize">
-                      {key.replace(/_/g, " ")}
+                [
+                  { header: "Interviewitution ID", value: onDataSend.interviewId },
+                  { header: "Room No", value: onDataSend.roomNo },
+                  { header: "User ID", value: onDataSend.userId },
+                  { header: "User Name", value: onDataSend.userName },
+                  { header: "Date", value: onDataSend.date },
+                  { header: "Slot Time", value: onDataSend.slot_Time },
+                  { header: "Status", value: onDataSend.status },
+                ].map(({ header, value }) => (
+                  <React.Fragment key={header}>
+                    <label className="p-3 col-span-3 font text-start">
+                      {header}
                     </label>
-                    <p className="p-3 col-span-3 text-sm text-gray-500 text-end">
-                      {value}
+                    <p className={`p-3 col-span-3 text-end text-sm `}>
+                      <span
+                        className={`${
+                          header === "Status"
+                            ? `text-end p-2 rounded-md font-medium ${
+                                value === "Active"
+                                  ? "bg-green-100 text-green-700"
+                                  : "bg-red-100 text-red-700"
+                              }`
+                            : "text-gray-500 text-end"
+                        }`}
+                      >
+                        {value}
+                      </span>
                     </p>
                   </React.Fragment>
                 ))}
@@ -123,63 +127,158 @@ const VE_Interview = ({ title, onClose, onDataSend }) => {
               onSubmit={handleSubmit(onSubmit)}
               className="grid gap-6 mx-5 mt-6"
             >
-              {Object.keys(defaultValues).map((key) => (
-                <div key={key} className="grid grid-cols-3 gap-4 items-center">
-                  <label
-                    htmlFor={key}
-                    className="col-span-1 text-gray-700 capitalize"
-                  >
-                    {key.replace(/_/g, " ")}
-                  </label>
-                  <div className="col-span-2">
-                    {key === "slot_Time" || key === "status" ? (
-                      <select
-                        id={key}
-                        {...register(key)}
-                        className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
-                          errors[key]
-                            ? "border-red-500 focus:ring-red-300"
-                            : "border-gray-300 focus:ring-blue-300"
-                        }`}
-                      >
-                        <option value="">Select {key.replace(/_/g, " ")}</option>
-                        {key === "slot_Time" && (
-                          <>
-                            <option value="60">60 minutes</option>
-                            <option value="120">120 minutes</option>
-                            <option value="180">180 minutes</option>
-                          </>
-                        )}
-                        {key === "status" && (
-                          <>
-                            <option value="active">Active</option>
-                            <option value="inactive">Inactive</option>
-                            <option value="pending">Pending</option>
-                            <option value="completed">Completed</option>
-                          </>
-                        )}
-                      </select>
-                    ) : (
-                      <input
-                        id={key}
-                        type={key === "date" ? "date" : "text"}
-                        placeholder={`Enter ${key.replace(/_/g, " ")}`}
-                        {...register(key)}
-                        className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
-                          errors[key]
-                            ? "border-red-500 focus:ring-red-300"
-                            : "border-gray-300 focus:ring-blue-300"
-                        }`}
-                      />
-                    )}
-                    {errors[key] && (
-                      <p className="text-sm text-red-500 mt-1">
-                        {errors[key]?.message}
-                      </p>
-                    )}
-                  </div>
+              <div className="grid grid-cols-3 gap-4 items-center">
+                <label
+                  htmlFor="interviewId"
+                  className="col-span-1 text-start text-gray-700"
+                >
+                  Interview ID
+                </label>
+                <div className="col-span-2">
+                <div className="col-span-2">
+                  <input
+                    id="interviewId"
+                    type="text"
+                    {...register("interviewId")}
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg  bg-gray-100 text-gray-700 border-gray-300 ${
+                      errors.interviewId 
+                        ? "border-red-500 "
+                        : "border-gray-300 "
+                    }`}
+                  />
+                  {errors.interviewId  && (
+                    <p className="text-sm text-red-500 mt-1">
+                      {errors.interviewId .message}
+                    </p>
+                  )}
                 </div>
-              ))}
+                </div>
+                <label
+                  htmlFor="roomNo"
+                  className="col-span-1 text-start text-gray-700"
+                >
+                  Room No
+                </label>
+                <div className="col-span-2">
+                  <input
+                    id="roomNo"
+                    type="text"
+                    placeholder="Number"
+                    {...register("roomNo")}
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg  bg-gray-100 text-gray-700 border-gray-300 ${
+                      errors.roomNo
+                        ? "border-red-500 "
+                        : "border-gray-300 "
+                    }`}
+                  />
+                  {errors.roomNo && (
+                    <p className="text-sm text-red-500 mt-1">
+                      {errors.roomNo.message}
+                    </p>
+                  )}
+                </div>
+                <label
+                  htmlFor="userId"
+                  className="col-span-1 text-start text-gray-700"
+                >
+                  User ID
+                </label>
+                <div className="col-span-2">
+                  <input
+                    id="userId"
+                    type="text"
+                    {...register("userId")}
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg  bg-gray-100 text-gray-700 border-gray-300 ${
+                      errors.userId
+                        ? "border-red-500 "
+                        : "border-gray-300"
+                    }`}
+                  />
+                  {errors.userId && (
+                    <p className="text-sm text-red-500 mt-1">
+                      {errors.userId.message}
+                    </p>
+                  )}
+                </div>
+                <label
+                  htmlFor="userName"
+                  className="col-span-1 text-start text-gray-700"
+                >
+                  User Name
+                </label>
+                <div className="col-span-2">
+                  <input
+                    id="userName"
+                    type="text"
+                    placeholder="Name"
+                    {...register("userName")}
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg  bg-gray-100 text-gray-700 border-gray-300 ${
+                      errors.userName
+                        ? "border-red-500"
+                        : "border-gray-300 "
+                    }`}
+                  />
+                  {errors.userName && (
+                    <p className="text-sm text-red-500 mt-1">
+                      {errors.userName.message}
+                    </p>
+                  )}
+                </div>
+                <label
+                  htmlFor="slot_Time"
+                  className="col-span-1 text-start text-gray-700"
+                >
+                  Slot Time
+                </label>
+                <div className="col-span-2">
+                  <select
+                    id="slot_Time"
+                    {...register("slot_Time")}
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                      errors.slot_Time
+                        ? "border-red-500 focus:ring-red-300"
+                        : "border-gray-300 focus:ring-blue-300"
+                    }`}
+                  >
+                    <option value="">--Select Time--</option>
+                    <option value="60">9 AM - 10 AM</option>
+                    <option value="120">10 AM - 11 AM</option>
+                    <option value="180">11 AM - 12 PM</option>
+                  </select>
+                  {errors.slot_Time && (
+                    <p className="text-sm text-red-500 mt-1">
+                      {errors.slot_Time.message}
+                    </p>
+                  )}
+                </div>
+                <label
+                  htmlFor="status"
+                  className="col-span-1 text-start text-gray-700"
+                >
+                  Status
+                </label>
+                <div className="col-span-2">
+                  <select
+                    id="status"
+                    {...register("status")}
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                      errors.status
+                        ? "border-red-500 focus:ring-red-300"
+                        : "border-gray-300 focus:ring-blue-300"
+                    }`}
+                  >
+                    <option value="">--Select Status--</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                  </select>
+                  {errors.status && (
+                    <p className="text-sm text-red-500 mt-1">
+                      {errors.status.message}
+                    </p>
+                  )}
+                </div>
+              </div>
+
               <div className="flex justify-center -mx-5 py-4 border-t gap-3 items-center">
                 <button
                   type="button"

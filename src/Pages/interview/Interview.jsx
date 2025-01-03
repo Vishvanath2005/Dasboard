@@ -134,7 +134,7 @@ const Interview = () => {
       />
       {view_editModal && (
         <VE_Interview
-          title="Institution"
+          title="Interview"
           onDataSend={selectedData}
           onClose={CloseVEModal}
           onClick={onSubmit}

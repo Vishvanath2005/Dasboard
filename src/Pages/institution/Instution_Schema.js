@@ -1,8 +1,8 @@
 import * as Yup from "yup";
 
 export const Institution_Schema = Yup.object({
-  institution_name: Yup.string()
-    .required("Name is required")
+  institutionId: Yup.number()
+    .required("Number is required")
     .min(2, "Name must be at least 2 characters"),
   email: Yup.string()
     .required("Email is required")

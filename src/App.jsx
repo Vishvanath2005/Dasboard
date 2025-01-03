@@ -11,6 +11,7 @@ import Subscription from "./Pages/subscription/Subscription";
 import Settings from "./Pages/settings/Settings";
 import Packages from "./Pages/packages/Packages";
 import AssignTickets from "./Pages/tickets/AssignTickets";
+import LeadsDetails from "./Pages/leads/LeadsDetails";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route path="/insitution" element={<Institution />} />
             <Route path="/leads" element={<Leads />} />
+            <Route path="/leads/leads_details" element={<LeadsDetails />} />
             <Route path="/enquires" element={<Enquires />} />
             <Route path="/tickets" element={<Tickets />} />
             <Route path="/tickets/assign_tickets" element={<AssignTickets />} />

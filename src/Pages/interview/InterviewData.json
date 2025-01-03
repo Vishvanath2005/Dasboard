@@ -1,0 +1,23 @@
+[
+    {
+      "id": 124,
+      "interviewId": "12345",
+      "roomNo": "NIT Trichy",
+      "userId": "#11111",
+      "userName": "Rahul",
+      "date": "20 June 24, 11.00 AM",
+      "slot_Time": "120",
+      "status": "Active"
+    },
+    {
+      "id": 125,
+      "interviewId": "54321",
+      "roomNo": "IIM Bangalore",
+      "userId": "#22222",
+      "userName": "Ananya",
+      "date": "20 June 24, 11.00 AM",
+      "slot_Time": "120",
+      "status": "Inactive"
+    }
+  ]
+  

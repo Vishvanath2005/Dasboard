@@ -61,7 +61,7 @@ const Tickets = () => {
             {datas.map((row, index) => (
               <tr
                 key={row.id}
-                className={`text-sm text-center bg-white text-table-text border-b-2 last:rounded-b-lg 
+                className={`text-sm text-center bg-white text-table-text border-b-2 
                   ${selectedId === row.ticketId ? "bg-gray-200" : "hover:bg-gray-100"} cursor-pointer`}
                 onClick={() => handleRowClick(row.ticketId)}
               >

@@ -1,45 +1,43 @@
 import React, { useState } from "react";
 import Title from "../../components/Title";
 import { MdOutlineEdit } from "react-icons/md";
-import data from './PackagesData.json'
+import data from "./PackagesData.json";
 import AddPackages from "./AddPackages";
 import EditPackages from "./EditPackages";
 
 const Packages = () => {
-    const [addModal, setAddModal] = useState(false);
-    const [editModal, setEditModal] = useState(false);
-      const [selectedData, setSelectedData] = useState(null);
-    
-  
-    const OpenAddModal = () => setAddModal(true);
-    const CloseAddModal = () => setAddModal(false);
+  const [addModal, setAddModal] = useState(false);
+  const [editModal, setEditModal] = useState(false);
+  const [selectedData, setSelectedData] = useState(null);
 
-    const OpenEditModal = () => setEditModal(true);
-    const CloseEditModal = () => setEditModal(false);
+  const OpenAddModal = () => setAddModal(true);
+  const CloseAddModal = () => setAddModal(false);
 
-    const onSubmit = (data) => {
-      console.log("Form Data:", data);
-      CloseAddModal();
-      CloseEditModal();
-    };
+  const OpenEditModal = () => setEditModal(true);
+  const CloseEditModal = () => setEditModal(false);
 
-    const handleSelectData = (id) => {
-      const selected = data.find((packages) => packages.id === id);
-      setSelectedData(selected);
-      console.log(selected);
-    };
+  const onSubmit = (data) => {
+    console.log("Form Data:", data);
+    CloseAddModal();
+    CloseEditModal();
+  };
+
+  const handleSelectData = (id) => {
+    const selected = data.find((packages) => packages.id === id);
+    setSelectedData(selected);
+    console.log(selected);
+  };
 
   return (
     <div className="px-6 py-3">
-      <Title title="Packages"
-      onOpen={OpenAddModal}  />
+      <Title title="Packages" onOpen={OpenAddModal} />
       <div className="grid grid-cols-12 gap-4">
         {data.map((row) => (
           <div
             key={row.id}
-            className="md:col-span-3 col-span-12 sm:col-span-6 p-4 py-6 rounded-lg border-2 shadow-lg bg-white grid grid-rows-[auto_auto_auto] gap-4"
+            className={`md:col-span-3 col-span-12 sm:col-span-6 p-4 py-6 rounded-lg border-2 shadow-lg bg-white gap-4`}
           >
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between mb-2 items-center">
               <p
                 className={`rounded-lg px-3 py-2 text-sm font-semibold ${
                   row.status === "Active"
@@ -52,8 +50,9 @@ const Packages = () => {
               <button
                 className="bg-green-100 hover:bg-green-200 p-1 rounded-md"
                 aria-label="Edit"
-                onClick={()=>{OpenEditModal()
-handleSelectData(row.id)
+                onClick={() => {
+                  OpenEditModal();
+                  handleSelectData(row.id);
                 }}
               >
                 <MdOutlineEdit className="text-green-800 text-xl" />
@@ -81,10 +80,14 @@ handleSelectData(row.id)
           </div>
         ))}
       </div>
-      {addModal && (
-        <AddPackages onClose={CloseAddModal} onClick={onSubmit} />
+      {addModal && <AddPackages onClose={CloseAddModal} onClick={onSubmit} />}
+      {editModal && (
+        <EditPackages
+          onClose={CloseEditModal}
+          onClick={onSubmit}
+          onSendData={selectedData}
+        />
       )}
-      {editModal && (<EditPackages onClose={CloseEditModal} onClick={onSubmit} onSendData={selectedData}/> )}
     </div>
   );
 };

@@ -6,6 +6,7 @@ const Title = ({
   showbutton = true,
   showaccessbutton = false,
   showassign_dd = false,
+  showfollowup = false,
   assignOptions = [],
   onAssignChange,
 }) => {
@@ -56,6 +57,14 @@ const Title = ({
             ))}
           </select>
         </div>
+      )}
+      {showfollowup && (
+        <button
+          className="border px-6 py-2 rounded-md bg-orange text-lg text-white font-Source_Sans_Pro"
+          onClick={onOpen}
+        >
+          Add Follow-up
+        </button>
       )}
     </div>
   );

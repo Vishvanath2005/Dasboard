@@ -3,10 +3,16 @@ import Title from "../../components/Title";
 import { HiArrowsUpDown } from "react-icons/hi2";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { TbEye } from "react-icons/tb";
+import data from "../interview/InterviewData.json";
 import Pagination from "../../components/Pagination";
+import VE_Interview from "./VE_Interview";
 
 const Interview = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [view_editModal, setView_editModal] = useState(false);
+   const [selectedData, setSelectedData] = useState(null);
+  const OpenVEModal = () => setView_editModal(true);
+  const CloseVEModal = () => setView_editModal(false);
   const [datas, setDatas] = useState([]);
   const itemsPerPage = 5;
   useEffect(() => {
@@ -18,32 +24,26 @@ const Interview = () => {
     setCurrentPage(pageNumber);
   };
 
-  const data = [
-    {
-      id: 124,
-      interviewId: "67890",
-      roomNo: "Anna University",
-      userId: "#54321",
-      userName: "Priya",
-      date: "19 June 24, 10.15 AM",
-      slot_Time: "100",
-      status: "Active",
-    },
-    {
-      id: 125,
-      interviewId: "67890",
-      roomNo: "IIT Madras",
-      userId: "#98765",
-      userName: "Martin",
-      date: "19 June 24, 10.15 AM",
-      slot_Time: "100",
-      status: "Inactive",
-    },
-  ];
+  const handleSelectData = (id) => {
+    const selected = data.find((interview) => interview.id === id);
+    setSelectedData(selected);
+    console.log(selected);
+  };
+
+  useEffect(() => {
+      if (selectedData) {
+        console.log("Selected data refreshed:", selectedData);
+      }
+    }, [selectedData]);
+
+    const onSubmit = (data) => {
+      console.log("Form Data:", data);
+      CloseVEModal();
+    };
 
   return (
     <div className="px-6 py-3">
-      <Title title="Interview" showbutton={false}/>
+      <Title title="Interview" showbutton={false} />
       <div className="overflow-x-auto no-scrollbar drop-shadow-lg">
         <table className="w-full items-center hidden md:table rounded-lg border border-gray-200 overflow-hidden">
           <thead className="bg-gradient-to-b from-slate-100 to-gray-200 border-2 rounded-t-lg">
@@ -68,53 +68,54 @@ const Interview = () => {
             </tr>
           </thead>
           <tbody className="rounded-lg">
-            {data.map((row, index) => (
+            {data.map((interview, index) => (
               <tr
-                key={row.id}
+                key={interview.id}
                 className="text-sm text-center bg-white text-table-text border-b-2 last:rounded-b-lg"
               >
                 <td className="py-3">
                   <p>{index + 1}</p>
                 </td>
-                <td >
-                  <p >
-                    {row.interviewId}
-                  </p>
+                <td>
+                  <p>{interview.interviewId}</p>
                 </td>
                 <td>
-                  <p>{row.roomNo}</p>
+                  <p>{interview.roomNo}</p>
                 </td>
                 <td>
-                  <p>{row.userId}</p>
+                  <p>{interview.userId}</p>
                 </td>
                 <td>
-                  <p>{row.userName}</p>
+                  <p>{interview.userName}</p>
                 </td>
                 <td>
-                  <p>{row.date}</p>
+                  <p>{interview.date}</p>
                 </td>
                 <td>
-                  <p>{row.slot_Time}</p>
+                  <p>{interview.slot_Time}</p>
                 </td>
                 <td>
                   <p
                     className={`rounded-lg p-1 text-base font-semibold ${
-                      row.status === "Active"
+                      interview.status === "Active"
                         ? "bg-green-100 text-green-700"
                         : "bg-red-100 text-red-700"
                     }`}
                   >
-                    {row.status}
+                    {interview.status}
                   </p>
                 </td>
                 <td>
                   <div className="flex justify-center items-center gap-3">
-                    <button className="bg-green-100 text-green-700 rounded-md p-1.5 hover:bg-green-200">
+                    <button className="bg-green-100 text-green-700 rounded-md p-1.5 hover:bg-green-200"
+                    onClick={()=>{OpenVEModal();
+                      handleSelectData(interview.id);
+                    }}>
                       <TbEye className="text-lg" />
                     </button>
                     <button
                       className="bg-red-100 rounded-md text-red-700 p-1.5 hover:bg-red-200"
-                      onClick={() => alert(`Delete ${row.id}`)}
+                      onClick={() => alert(`Delete ${interview.id}`)}
                     >
                       <RiDeleteBin6Line className="text-lg" />
                     </button>
@@ -131,6 +132,14 @@ const Interview = () => {
         currentPage={currentPage}
         onPageChange={handlePageChange}
       />
+      {view_editModal && (
+        <VE_Interview
+          title="Institution"
+          onDataSend={selectedData}
+          onClose={CloseVEModal}
+          onClick={onSubmit}
+        />
+      )}
     </div>
   );
 };

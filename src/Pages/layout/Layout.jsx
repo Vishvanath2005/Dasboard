@@ -72,12 +72,14 @@ const Layout = () => {
                     } cursor-pointer text-md flex items-center font-medium font-Source Sans Pro gap-x-3 p-3 mt-1  transition-all duration-300 hover:bg-blue-100 hover:text-blue-500  ${
                       location.pathname.startsWith(menu.to) ||
                       (menu.to === "/tickets" &&
-                        location.pathname.startsWith("/tickets/assign_tickets"))
+                        location.pathname.startsWith("/tickets/assign_tickets")) ||  
+                        (menu.to === "/leads" &&
+                          location.pathname.startsWith("/leads/leads_details"))
                         ? `${
                             open
-                              ? "bg-select-sidebar  border-r-8 border-orange text-blue-500 transition-all duration-300"
+                              ? "bg-select-sidebar  border-r-8 border-orange  text-blue-500 transition-all duration-300"
                               : "md:bg-gray-200 md:text-primary md:transition-all md:duration-500 duration-700"
-                          }`
+                          } `
                         : "text-gray-500  "
                     }`}
                     key={index}

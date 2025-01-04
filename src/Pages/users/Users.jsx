@@ -3,12 +3,22 @@ import Title from "../../components/Title";
 import { HiArrowsUpDown } from "react-icons/hi2";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { TbEye } from "react-icons/tb";
+import data from "./UsersData.json";
 import Pagination from "../../components/Pagination";
+import AddUser from "./AddUser";
+import { useNavigate } from "react-router-dom";
 
 const Users = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [datas, setDatas] = useState([]);
+  const [addModal, setAddModal] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
+  const navigate = useNavigate();
   const itemsPerPage = 5;
+
+  const OpenAddModal = () => setAddModal(true);
+  const CloseAddModal = () => setAddModal(false);
+
   useEffect(() => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const selectedData = data.slice(startIndex, startIndex + itemsPerPage);
@@ -18,34 +28,18 @@ const Users = () => {
     setCurrentPage(pageNumber);
   };
 
-  const data = [
-    {
-      id: 124,
-      adminID:"123456",
-      name:"Vishva",
-      phone:"9898989898",
-      email:"jane.doe@example.com",
-      institution:"Anna University",
-      credit:"100",
-      status:"Active",
-      interview_attempt:"02",
-    },
-    {
-      id: 125,
-      adminID:"123456",
-      name:"Vishva",
-      phone:"9898989898",
-      email:"jane.doe@example.com",
-      institution:"IIT Madras",
-      credit:"100",
-      status:"Inactive",
-      interview_attempt:"02",
-    },
-  ];
+const handleUT =()=>{
+ navigate(`/users/users_tab`)
+}
+
+  const onSubmit = (data) => {
+    console.log("Form Data:", data);
+    CloseAddModal();
+  };
 
   return (
     <div className="px-6 py-3">
-      <Title title="Users" />
+      <Title title="Users" onOpen={OpenAddModal}/>
       <div className="overflow-x-auto no-scrollbar drop-shadow-lg">
         <table className="w-full items-center hidden md:table rounded-lg border border-gray-200 overflow-hidden">
           <thead className="bg-gradient-to-b from-slate-100 to-gray-200 border-2 rounded-t-lg">
@@ -115,7 +109,8 @@ const Users = () => {
                 </td>
                 <td>
                   <div className="flex justify-center items-center gap-3">
-                    <button className="bg-green-100 text-green-700 rounded-md p-1.5 hover:bg-green-200">
+                    <button className="bg-green-100 text-green-700 rounded-md p-1.5 hover:bg-green-200"
+                    onClick={handleUT}>
                       <TbEye className="text-lg" />
                     </button>
                     <button
@@ -137,6 +132,7 @@ const Users = () => {
         currentPage={currentPage}
         onPageChange={handlePageChange}
       />
+       {addModal && (<AddUser title="Users" onClose={CloseAddModal} onClick={onSubmit}/>)}
     </div>
   );
 };

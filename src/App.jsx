@@ -12,6 +12,7 @@ import Settings from "./Pages/settings/Settings";
 import Packages from "./Pages/packages/Packages";
 import AssignTickets from "./Pages/tickets/AssignTickets";
 import LeadsDetails from "./Pages/leads/LeadsDetails";
+import UsersTabs from "./Pages/users/UsersTabs";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/tickets/assign_tickets" element={<AssignTickets />} />
             <Route path="/packages" element={<Packages />} />
             <Route path="/users" element={<Users />} />
+            <Route path="/users/users_tab" element={<UsersTabs />} />
             <Route path="/interview" element={<Interview />} />
             <Route path="/subscription" element={<Subscription />} />
             <Route path="/settings" element={<Settings />} />

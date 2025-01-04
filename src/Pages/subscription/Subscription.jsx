@@ -37,6 +37,11 @@ const Subscription = () => {
     console.log(selected);
   };
 
+  const handleDelete = (id, event) => {
+    event.stopPropagation();
+    alert(`Delete lead with ID: ${id}`);
+  };
+
   useEffect(() => {
     if (selectedData) {
       console.log("Selected data refreshed:", selectedData);
@@ -127,7 +132,7 @@ const Subscription = () => {
                 <td>
                   <button
                     className="bg-red-100 rounded-md text-red-700 p-1.5 hover:bg-red-200"
-                    onClick={() => alert(`Delete ${subscription.id}`)}
+                    onClick={(e) => handleDelete(subscription.id, e)}
                   >
                     <RiDeleteBin6Line className="text-lg" />
                   </button>

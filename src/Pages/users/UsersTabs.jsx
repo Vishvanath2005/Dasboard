@@ -1,76 +1,40 @@
 import React, { useState } from "react";
-import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
 import Title from "../../components/Title";
 
 const UsersTabs = () => {
-    const [selectedTabIndex, setSelectedTabIndex] = useState(0);
+  const [activeTab, setActiveTab] = useState(0);
+  const tabs = [
+    "User Dashboard",
+    "Resume Builder Form",
+    "Upcoming Interviews",
+    "Reports",
+  ];
+
   return (
-    <div className="w-full mx-5">
-    {/* Page Title */}
-    <Title title="Users" />
-
-    {/* Tabs */}
-    <Tabs
-      selectedIndex={selectedTabIndex}
-      onSelect={(index) => setSelectedTabIndex(index)}
-      className="w-full"
-    >
-      {/* Tab Navigation */}
-      <TabList className="flex gap-10 border-b border-gray-300">
-        <Tab
-          className={` ml-10 text-center py-2 outline-none border border-gray-900  text-gray-500 font-medium cursor-pointer ${
-            selectedTabIndex === 0
-              ? "border-b-2 border-gray-800 text-gray-900"
-              : "hover:text-gray-700"
-          }`}
-        >
-          Users Dashboard
-        </Tab>
-        <Tab
-          className={` text-center py-2 text-gray-500 outline-none font-medium cursor-pointer ${
-            selectedTabIndex === 1
-              ? "border-b-2 border-gray-800 text-gray-900"
-              : "hover:text-gray-700"
-          }`}
-        >
-          Resume
-        </Tab>
-        <Tab
-          className={` text-center py-2 text-gray-500 outline-none font-medium cursor-pointer ${
-            selectedTabIndex === 2
-              ? "border-b-2 border-gray-800 text-gray-900"
-              : "hover:text-gray-700"
-          }`}
-        >
-          Upcoming Interviews
-        </Tab>
-        <Tab
-          className={` text-center py-2 text-gray-500 outline-none font-medium cursor-pointer ${
-            selectedTabIndex === 3
-              ? "border-b-2 border-gray-800 text-gray-900"
-              : "hover:text-gray-700"
-          }`}
-        >
-          Reports
-        </Tab>
-      </TabList>
-
-      {/* Tab Panels */}
-      <TabPanel>
-        <div className="p-4">Content for Users Dashboard</div>
-      </TabPanel>
-      <TabPanel>
-        <div className="p-4">Content for Resume</div>
-      </TabPanel>
-      <TabPanel>
-        <div className="p-4">Content for Upcoming Interviews</div>
-      </TabPanel>
-      <TabPanel>
-        <div className="p-4">Content for Reports</div>
-      </TabPanel>
-    </Tabs>
-  </div>
+    <div className="w-auto mx-6">
+      <Title title={`Users / ${tabs[activeTab]}`} showbutton={false} />
+      <div className="flex gap-10 mx-2 border-b border-gray-300">
+        {tabs.map((tab, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveTab(index)}
+            className={`space-x-6 py-2 text-lg text-center mb-2 font-medium ${
+              activeTab === index
+                ? "border-b-2 border-orange text-orange"
+                : "text-gray-500 hover:text-gray-700"
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+      <div className="p-4 ">
+        {activeTab === 0 && <div>Content for User Dashboard</div>}
+        {activeTab === 1 && <div>Content for Resume Builder Form</div>}
+        {activeTab === 2 && <div>Content for Upcoming Interviews</div>}
+        {activeTab === 3 && <div>Content for Reports</div>}
+      </div>
+    </div>
   );
 };
 

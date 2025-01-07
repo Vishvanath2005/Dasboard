@@ -6,13 +6,13 @@ const Navbar = () => {
   return (
     <div className=" my-5 flex justify-between items-center px-3 sm:px-6">
       <div className="font-Source Sans Pro  ">
-        <div className="md:w-96 sm:w-60 w-36 flex gap-2 rounded-lg bg-white sm:p-2 py-1 px-2 items-center  ">
+        <div className="md:w-96 sm:w-60 w-36 flex gap-2 rounded-lg border bg-white sm:p-2 py-1 px-2 items-center  ">
           <IoSearchOutline className="sm:text-xl text-sm font-semibold"/>
           <input
             type="text"
             name="search"
             id="serarch"
-            className="w-full text-sm sm:text-xl outline-none"
+            className="w-full text-sm sm:text-xl rounded border-white outline-none "
             placeholder="Search here..."
           />
         </div>

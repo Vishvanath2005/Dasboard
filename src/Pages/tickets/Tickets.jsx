@@ -3,7 +3,7 @@ import Title from '../../components/Title';
 import { HiArrowsUpDown } from "react-icons/hi2";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Pagination from '../../components/Pagination';
-import data from '../tickets/TicketsData.json';
+import data from '../../json_data/TicketsData.json';
 import { useNavigate } from 'react-router-dom';
 
 const Tickets = () => {

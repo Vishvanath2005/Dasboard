@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Title from "../../components/Title";
 import { HiArrowsUpDown } from "react-icons/hi2";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import data from "./SubscriptionData.json";
+import data from "../../json_data/SubscriptionData.json";
 import Pagination from "../../components/Pagination";
 import AddSubscription from "./AddSubscription";
 import VE_Subscription from "./VE_Subscription"

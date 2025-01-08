@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { MdClose } from "react-icons/md";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Leads_Schema from "./Leads_Schema";
+import Leads_Schema from "../../Schema/Leads_Schema";
 
 const EditLeads = ({title,  onSendData, onClose }) => {
   const {

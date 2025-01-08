@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { MdClose } from "react-icons/md";
 import { yupResolver } from "@hookform/resolvers/yup";
-import LeadsFU_Schema from "./LeadsFU_Schema";
+import LeadsFU_Schema from "../../Schema/LeadsFU_Schema";
 
 const AddFollowup = ({ title, onClose }) => {
   const {

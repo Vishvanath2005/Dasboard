@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Title from "../../components/Title";
-import data from "./LeadsData.json";
+import data from "../../json_data/LeadsData.json";
 import { HiArrowsUpDown } from "react-icons/hi2";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Pagination from "../../components/Pagination";

@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { MdClose } from "react-icons/md";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Packages_Schema } from "./Packages_Schema";
+import { Packages_Schema } from "../../Schema/Packages_Schema";
 
 const EditPackages = ({ onClose, onSendData }) => {
   const {

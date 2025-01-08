@@ -5,7 +5,7 @@ import { HiArrowsUpDown } from "react-icons/hi2";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Pagination from "../../components/Pagination";
 import VE_Institution from "./VE_Institution";
-import Data from "../institution/InstitutionData.json";
+import Data from "../../json_data/InstitutionData.json";
 
 const Institution = () => {
   const [currentPage, setCurrentPage] = useState(1);

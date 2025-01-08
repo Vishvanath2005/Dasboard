@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { MdClose } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Interview_Schema } from "./Interview_Schema";
+import { Interview_Schema } from "../../Schema/Enquries_Schema";
 
 const VE_Interview = ({ title, onClose, onDataSend }) => {
   const [isFirstModalOpen, setIsFirstModalOpen] = useState(true);

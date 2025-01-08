@@ -28,7 +28,7 @@ const UsersTabs = () => {
           </button>
         ))}
       </div>
-      <div className="p-4 ">
+      <div className="p-2 ">
         {activeTab === 0 && <div>Content for User Dashboard</div>}
         {activeTab === 1 && <div>Content for Resume Builder Form</div>}
         {activeTab === 2 && <div>Content for Upcoming Interviews</div>}

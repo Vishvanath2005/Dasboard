@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Institution_Schema } from "./Instution_Schema";
+import { Institution_Schema } from "../../Schema/Instution_Schema";
 
 const VE_Institution = ({ title, onClose, onDataSend }) => {
   const [isFirstModalOpen, setIsFirstModalOpen] = useState(true);

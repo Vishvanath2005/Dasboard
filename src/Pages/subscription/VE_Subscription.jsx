@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { MdClose } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Subscription_Schema from "./Subscription_Schema";
+import Subscription_Schema from "../../Schema/Subscription_Schema";
 
 const VE_Subscription = ({ title, onClose, onDataSend }) => {
   const [isFirstModalOpen, setIsFirstModalOpen] = useState(true);

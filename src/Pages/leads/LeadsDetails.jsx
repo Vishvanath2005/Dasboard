@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { useLocation } from "react-router-dom";
 import Title from "../../components/Title";
 import leads from "../../assets/Leads.png";
-import data from "../leads/LeadsData.json";
+import data from "../../json_data/LeadsData.json";
 import EditLeads from "./EditLeads";
 import AddFollowup from "./AddFollowup";
 

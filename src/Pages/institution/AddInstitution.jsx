@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { MdClose } from "react-icons/md";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Institution_Schema } from "./Instution_Schema";
+import { Institution_Schema } from "../../Schema/Instution_Schema";
 
 const AddInstitution = ({ onClose }) => {
   const {

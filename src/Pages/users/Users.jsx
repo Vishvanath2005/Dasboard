@@ -3,7 +3,7 @@ import Title from "../../components/Title";
 import { HiArrowsUpDown } from "react-icons/hi2";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { TbEye } from "react-icons/tb";
-import data from "./UsersData.json";
+import data from "../../json_data/UsersData.json";
 import Pagination from "../../components/Pagination";
 import AddUser from "./AddUser";
 import { useNavigate } from "react-router-dom";

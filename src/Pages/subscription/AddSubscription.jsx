@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { MdClose } from "react-icons/md";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Subscription_Schema from "./Subscription_Schema";
+import Subscription_Schema from "../../Schema/Subscription_Schema";
 
 const AddSubscription = ({ onClose, title }) => {
   const {

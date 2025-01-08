@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import Title from "../../components/Title";
-import data from "../tickets/TicketsData.json";
+import data from "../../json_data/TicketsData.json";
 import { IoCameraOutline } from "react-icons/io5";
 import { VscSend } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";

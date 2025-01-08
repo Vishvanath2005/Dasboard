@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Enquries_Schema } from "./Enquries_Schema";
+import { Enquries_Schema } from "../../Schema/Enquries_Schema";
 
 const VE_Enquires = ({ title, onClose, onDataSend }) => {
   const [isFirstModalOpen, setIsFirstModalOpen] = useState(true);

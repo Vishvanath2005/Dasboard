@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Title from "../../components/Title";
 import { MdOutlineEdit } from "react-icons/md";
-import data from "./PackagesData.json";
+import data from "../../json_data/PackagesData.json";
 import AddPackages from "./AddPackages";
 import EditPackages from "./EditPackages";
 

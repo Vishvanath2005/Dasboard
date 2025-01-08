@@ -3,7 +3,7 @@ import Title from "../../components/Title";
 import { HiArrowsUpDown } from "react-icons/hi2";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { TbEye } from "react-icons/tb";
-import Data from "../enquires/EnquriesData.json";
+import Data from "../../json_data/EnquriesData.json";
 import Pagination from "../../components/Pagination";
 import VE_Enquires from "./VE_Enquires";
 

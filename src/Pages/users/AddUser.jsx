@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { MdClose } from "react-icons/md";
 import Select from "react-select";
 import { yupResolver } from "@hookform/resolvers/yup";
-import User_Schema from "./User_Schema";
+import User_Schema from "../../Schema/User_Schema";
 
 const AddUser = ({ onClose, title }) => {
   const {

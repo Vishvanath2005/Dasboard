@@ -89,7 +89,7 @@ const LeadsDetails = () => {
         </div>
       </div>
       {editLeads && <EditLeads title="Leads" onSendData={leadsData} onClose={CloseEditLeads} onClick={onSubmit}/>}
-{addFU && <AddFollowup  onClose={CloseFu} onClick={onSubmit}/>}
+{addFU && <AddFollowup title="Follow-Up"  onClose={CloseFu} onClick={onSubmit}/>}
     </div>
   );
 };

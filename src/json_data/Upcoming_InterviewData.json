@@ -1,0 +1,84 @@
+[
+    {
+      "id": 1,
+      "interviewId": "1234546",
+      "roomNo": "1234567",
+      "userName": "Name",
+      "date": "18 June 24, 02.23 PM",
+      "slotTime": 100,
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "interviewId": "1234546",
+      "roomNo": "1234567",
+      "userName": "Name",
+      "date": "18 June 24, 02.23 PM",
+      "slotTime": 100,
+      "status": "Active"
+    },
+    {
+      "id": 3,
+      "interviewId": "1234546",
+      "roomNo": "1234567",
+      "userName": "Name",
+      "date": "18 June 24, 02.23 PM",
+      "slotTime": 100,
+      "status": "Active"
+    },
+    {
+      "id": 4,
+      "interviewId": "1234546",
+      "roomNo": "1234567",
+      "userName": "Name",
+      "date": "18 June 24, 02.23 PM",
+      "slotTime": 100,
+      "status": "Active"
+    },
+    {
+      "id": 5,
+      "interviewId": "1234546",
+      "roomNo": "1234567",
+      "userName": "Name",
+      "date": "18 June 24, 02.23 PM",
+      "slotTime": 100,
+      "status": "Active"
+    },
+    {
+      "id": 6,
+      "interviewId": "1234546",
+      "roomNo": "1234567",
+      "userName": "Name",
+      "date": "18 June 24, 02.23 PM",
+      "slotTime": 100,
+      "status": "Active"
+    },
+    {
+      "id": 7,
+      "interviewId": "1234546",
+      "roomNo": "1234567",
+      "userName": "Name",
+      "date": "18 June 24, 02.23 PM",
+      "slotTime": 100,
+      "status": "Active"
+    },
+    {
+      "id": 8,
+      "interviewId": "1234546",
+      "roomNo": "1234567",
+      "userName": "Name",
+      "date": "18 June 24, 02.23 PM",
+      "slotTime": 100,
+      "status": "Active"
+    },
+    {
+      "id": 9,
+      "interviewId": "1234546",
+      "roomNo": "1234567",
+      "userName": "Name",
+      "date": "18 June 24, 02.23 PM",
+      "slotTime": 100,
+      "status": "Active"
+    }
+  ]
+  

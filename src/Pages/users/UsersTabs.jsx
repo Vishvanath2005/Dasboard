@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import Title from "../../components/Title";
+import User_Dashboard from "./tabs/User_Dashboard";
+import Resume from "./tabs/Resume";
+import Upcoming_Interview from "./tabs/Upcoming_Interviews"
+import Reports from "./tabs/Reports";
 
 const UsersTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -29,10 +33,10 @@ const UsersTabs = () => {
         ))}
       </div>
       <div className="p-2 ">
-        {activeTab === 0 && <div>Content for User Dashboard</div>}
-        {activeTab === 1 && <div>Content for Resume Builder Form</div>}
-        {activeTab === 2 && <div>Content for Upcoming Interviews</div>}
-        {activeTab === 3 && <div>Content for Reports</div>}
+        {activeTab === 0 && <div><User_Dashboard /></div>}
+        {activeTab === 1 && <div><Resume /></div>}
+        {activeTab === 2 && <div> <Upcoming_Interview /> </div>}
+        {activeTab === 3 && <div><Reports /></div>}
       </div>
     </div>
   );

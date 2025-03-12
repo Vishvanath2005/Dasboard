@@ -21,11 +21,11 @@ const Title = ({
   };
 
   return (
-    <div className="flex z-10 justify-between items-center my-8 px-2">
-      <p className="text-4xl font-Exo font-semibold">{title}</p>
+    <div className="flex z-10 justify-between items-center my-4 sm:px-2">
+      <p className="sm:text-4xl text-xl font-Exo font-semibold">{title}</p>
       {showbutton && (
         <button
-          className="border px-6 py-2 rounded-md bg-orange text-lg text-white font-Source_Sans_Pro"
+          className="border sm:px-6 sm:py-2 rounded-md bg-orange  text-sm p-1 sm:text-lg text-white font-Source_Sans_Pro"
           onClick={onOpen}
         >
           Add {title}

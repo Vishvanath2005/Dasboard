@@ -38,31 +38,25 @@ const Layout = () => {
   return (
     <div>
       <div className="flex">
-        
         <div
           className={`${
             !open
-              ? ` md:w-24 sm:relative  w-1/5  sm:w-1/6`
-              : `sm:w-4/6  w-3/5  sm:static absolute   md:w-1/6 `
-          }  h-screen border-r-2 drop-shadow-lg bg-white duration-300`}
+              ? ` md:w-32 sm:relative  sm:w-1/6`
+              : `w-full absolute  sm:w-3/6   sm:static md:w-72`
+          }  h-screen z-10 border-r-2 drop-shadow-lg bg-white duration-300`}
         >
-          <div className={` ${!open ? `pt-8 pb-6 ` : ` pl-5 pt-8 pb-8`}`}>
-            <img src={Logo} alt="Logo" />
+          <div>
+            <div
+              className={` ${
+                !open
+                  ? `pt-8 pb-6 size-10 px-1 sm:px-1.5 sm:size-20 sm:w-full `
+                  : `  py-6 `
+              } flex justify-center items-center`}
+            >
+              <img src={Logo} alt="Logo" />
+            </div>
           </div>
-          <div
-            className={` ${
-              !open
-                ? `static flex justify-center  hover:bg-slate-200  `
-                : `absolute bg-orange rounded-full md:left-44 sm:left-44 rotate-180 left-[327px]`
-            } top-16  duration-500   p-2`}
-            onClick={() => {
-              setOpen(!open);
-            }}
-          >
-            <TbLayoutSidebarRightCollapse
-              className={`${!open ? `text-black` : `text-white`} text-2xl `}
-            />
-          </div>
+
           <ul>
             {Menus.map((menu, index) => (
               <React.Fragment key={index}>
@@ -73,25 +67,48 @@ const Layout = () => {
                     } cursor-pointer text-md flex items-center font-medium font-Source Sans Pro gap-x-3 p-3 mt-1  transition-all duration-300 hover:bg-blue-100 hover:text-blue-500  ${
                       location.pathname.startsWith(menu.to) ||
                       (menu.to === "/tickets" &&
-                        location.pathname.startsWith("/tickets/assign_tickets")) ||  
-                        (menu.to === "/leads" &&
-                          location.pathname.startsWith("/leads/leads_details"))
+                        location.pathname.startsWith(
+                          "/tickets/assign_tickets"
+                        )) ||
+                      (menu.to === "/leads" &&
+                        location.pathname.startsWith("/leads/leads_details"))
                         ? `${
                             open
-                              ? "bg-select-sidebar  border-r-8 border-orange  text-blue-500 transition-all duration-300"
-                              : "md:bg-gray-200 md:text-primary md:transition-all md:duration-500 duration-700"
+                              ? "bg-select-sidebar text-base   border-r-4 border-orange  text-blue-500 transition-all duration-300"
+                              : "md:bg-select-sidebar md:text-primary border-r-4 border-orange text-blue-500 md:transition-all md:duration-500 duration-700"
                           } `
-                        : "text-gray-500  "
+                        : " text-table-text font-Source_Sans_Pro font-normal text-base  "
                     }`}
                     key={index}
                   >
-                    <p className="sm:text-2xl text-base">{menu.icon}</p>
+                    <p className="sm:text-xl text-base">{menu.icon}</p>
                     <p className={`${!open && `hidden `}`}>{menu.title}</p>
                   </li>
                 </NavLink>
               </React.Fragment>
             ))}
           </ul>
+          <div
+            className={` ${
+              !open
+                ? ` justify-center  hover:bg-slate-200  `
+                : `  rotate-180   mx-2 `
+            } fixed w-full flex justify-start items-center  duration-500   bottom-2 p-2`}
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
+            <TbLayoutSidebarRightCollapse
+              className={`${
+                !open ? `text-black text-2xl` : ` text-3xl`
+              }  font-normal`}
+            />
+            <span
+              className={`${!open ? `hidden ` : `rotate-180 text-xl px-3`} `}
+            >
+              Close Tab
+            </span>
+          </div>
         </div>
         <div className="w-full h-screen overflow-auto bg-slate-100  ">
           <Navbar />

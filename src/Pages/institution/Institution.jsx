@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Title from "../../components/Title";
 import AddInstitution from "../institution/AddInstitution";
-import { HiArrowsUpDown } from "react-icons/hi2";
-import { RiDeleteBin6Line } from "react-icons/ri";
 import Pagination from "../../components/Pagination";
 import VE_Institution from "./VE_Institution";
+import { HiArrowsUpDown } from "react-icons/hi2";
+import { RiDeleteBin6Line } from "react-icons/ri";
 import Data from "../../json_data/InstitutionData.json";
 
 const Institution = () => {
@@ -18,7 +18,7 @@ const Institution = () => {
   const OpenAddModal = () => setAddModal(true);
   const CloseAddModal = () => setAddModal(false);
 
-  const itemsPerPage = 7;
+  const itemsPerPage = 10;
 
   useEffect(() => {
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -48,11 +48,11 @@ const Institution = () => {
   };
 
   return (
-    <div className="px-6 py-3">
+    <div className="px-3 py-3">
       <Title title="Institution" onOpen={OpenAddModal} />
-      <div className="overflow-x-auto drop-shadow-lg">
-        <table className="w-full items-center hidden md:table rounded-lg border border-gray-200 overflow-hidden">
-          <thead className="bg-gradient-to-b from-slate-100 to-gray-200 border-2 rounded-t-lg">
+      <div className="overflow-x-auto z-0 h-80 sm:h-[480px] drop-shadow-lg">
+        <table className="w-full min-w-[900px] md:table rounded-lg border border-gray-200">
+          <thead className="bg-gradient-to-b  from-slate-100 to-gray-200 border-2 rounded-t-lg">
             <tr>
               {[
                 "S.No",
@@ -65,7 +65,10 @@ const Institution = () => {
                 "Status",
                 "Action",
               ].map((header) => (
-                <th key={header} className="p-4 font-semibold text-center">
+                <th
+                  key={header}
+                  className="p-4 font-semibold text-center whitespace-nowrap"
+                >
                   <p className="flex justify-center gap-1 items-center">
                     {header} <HiArrowsUpDown className="text-gray-400" />
                   </p>
@@ -79,10 +82,10 @@ const Institution = () => {
                 key={institution.id}
                 className="text-sm text-center bg-white text-table-text border-b-2 last:rounded-b-lg"
               >
-                <td className="py-3">
+                <td className="py-3 whitespace-nowrap">
                   <p>{(currentPage - 1) * itemsPerPage + index + 1}</p>
                 </td>
-                <td className="text-blue-500">
+                <td className="text-blue-500 whitespace-nowrap">
                   <p
                     className="cursor-pointer"
                     onClick={() => {
@@ -93,22 +96,22 @@ const Institution = () => {
                     <u>{institution.institutionId}</u>
                   </p>
                 </td>
-                <td>
+                <td className="whitespace-nowrap">
                   <p>{institution.institutionName}</p>
                 </td>
-                <td>
+                <td className="whitespace-nowrap">
                   <p>{institution.email}</p>
                 </td>
-                <td>
+                <td className="whitespace-nowrap">
                   <p>{institution.spoc}</p>
                 </td>
-                <td>
+                <td className="whitespace-nowrap">
                   <p>{institution.credit}</p>
                 </td>
-                <td>
+                <td className="whitespace-nowrap">
                   <p>{institution.date}</p>
                 </td>
-                <td>
+                <td className="whitespace-nowrap">
                   <p
                     className={`rounded-lg p-1 m-2 text-base font-semibold ${
                       institution.status === "Active"
@@ -119,10 +122,10 @@ const Institution = () => {
                     {institution.status}
                   </p>
                 </td>
-                <td>
+                <td className="whitespace-nowrap">
                   <button
                     className="bg-red-100 rounded-md text-red-700 p-1.5 hover:bg-red-200"
-                    onClick={() => alert(`Delete ${row.id}`)}
+                    onClick={() => alert(`Delete ${institution.id}`)}
                   >
                     <RiDeleteBin6Line className="text-lg" />
                   </button>
@@ -132,6 +135,7 @@ const Institution = () => {
           </tbody>
         </table>
       </div>
+
       <Pagination
         totalItems={Data.length}
         itemsPerPage={itemsPerPage}

@@ -49,7 +49,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
               </p>
               <div className="z-20 absolute -top-6 left-[94%]">
                 <button
-                  className=" text-3xl p-3 rounded-full shadow-lg hover:bg-red-300 hover:text-white text-red-600 bg-white w-fit items-center"
+                  className=" text-3xl p-3 rounded-full shadow-lg hover:bg-red-600 hover:text-white text-red-600 bg-white w-fit items-center"
                   onClick={onClose}
                 >
                   <MdClose />

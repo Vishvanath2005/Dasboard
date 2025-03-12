@@ -17,7 +17,7 @@ const AddInstitution = ({ onClose }) => {
     console.log("Form Data:", data);
     onClose();
   };
-
+  
   return (
     <div>
       <div className="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50">
@@ -28,7 +28,7 @@ const AddInstitution = ({ onClose }) => {
             </p>
             <div className="z-20 absolute -top-5 left-[95%]">
               <button
-                className=" text-3xl p-3 rounded-full shadow-lg hover:bg-red-300 hover:text-white text-red-600 bg-white w-fit items-center"
+                className=" text-3xl p-3 rounded-full shadow-lg hover:bg-red-500 hover:text-white text-red-600 bg-white w-fit items-center"
                 onClick={onClose}
               >
                 <MdClose />

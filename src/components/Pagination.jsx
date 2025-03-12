@@ -39,9 +39,9 @@ const Pagination = ({
   };
 
   return (
-    <div className="flex justify-between items-center mt-3 px-3 ">
-      <div className="text-sm text-gray-600">
-        <p className="text-base">{displayText}</p>
+    <div className="flex sm:justify-between flex-col sm:flex-row gap-3 py-2  text-center justify-center items-center mt-3 px-3 ">
+      <div className="ml-6">
+        <p className="text-sm sm:text-base text-gray-500">{displayText}</p>
       </div>
 
       <div className="flex items-center justify-center gap-2">

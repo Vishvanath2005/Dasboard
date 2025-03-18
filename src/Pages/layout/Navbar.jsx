@@ -4,29 +4,26 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoMdMenu } from "react-icons/io";
 import Logo from "../../assets/logo.png";
 
-const Navbar = () => {
-  const [open, setOpen] = useState(true);
+const Navbar = ({ open, setOpen }) => {
   return (
     <div className=" mt-5 flex justify-between items-center gap-3 px-3 sm:px-6">
-     <span className="flex gap-1.5 justify-center items-center">
-     <div
-        className={` ${
-          !open ? ` sm:hidden` : ` static  rotate-180 sm:mt-2   `
-        }  w-fit flex justify-start items-center  duration-500 `}
-        onClick={() => {
-          setOpen(!open);
-        }}
-      >
-        <IoMdMenu
-          className={`${
-            !open ? `text-2xl sm:text-amber-50 text-black` : ` text-3xl`
-          }  font-normal`}
-        />
-      </div>
-      <div className="sm:hidden ">
-        <img src={Logo} alt="Logo" className="w-24" />
-      </div>
-     </span>
+      <span className="flex sm:hidden gap-1.5 justify-center items-center">
+        <div
+          className="w-fit flex justify-start items-center duration-500"
+          onClick={() => {
+            setOpen(true); // Ensure it opens the sidebar
+          }}
+        >
+          <IoMdMenu
+            className={`${
+              !open ? "text-2xl sm:text-amber-50 text-black" : " text-3xl"
+            } font-normal`}
+          />
+        </div>
+        <div className="sm:hidden ">
+          <img src={Logo} alt="Logo" className="w-24" />
+        </div>
+      </span>
       <div className="font-Source Sans Pro  ">
         <div className="md:w-96 sm:w-60 w-32 flex gap-1.5 rounded-lg border bg-white sm:p-2  pl-1 items-center  ">
           <IoSearchOutline className="sm:text-xl text-sm text-gray-400 font-semibold" />

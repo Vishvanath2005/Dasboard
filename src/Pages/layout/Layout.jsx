@@ -17,7 +17,7 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 
 const Layout = () => {
   const location = useLocation();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const Menus = [
     { title: "Dashboard", icon: <LuLayoutDashboard />, to: "/dashboard" },
@@ -42,7 +42,7 @@ const Layout = () => {
         <div
           className={`${
             !open
-              ? ` md:w-32 sm:relative w-0 `
+              ? ` md:w-32 sm:relative hidden sm:block  `
               : `w-2/3 absolute  sm:w-3/6   sm:static md:w-72`
           }  h-screen z-10 border-r-2 drop-shadow-lg bg-white duration-300`}
         >
@@ -121,7 +121,7 @@ const Layout = () => {
           </ul>
         </div>
         <div className="w-full h-screen overflow-auto bg-slate-100  ">
-          <Navbar />
+          <Navbar open={open} setOpen={setOpen}/>
           <Suspense>
             <Outlet />
           </Suspense>

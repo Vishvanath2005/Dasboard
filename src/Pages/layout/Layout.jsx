@@ -1,6 +1,7 @@
 import React, { Suspense, useState } from "react";
 import Logo from "../../assets/logo.png";
 import { TbLayoutSidebarRightCollapse } from "react-icons/tb";
+import { IoMdMenu } from "react-icons/io";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 import { GoPeople } from "react-icons/go";
@@ -37,7 +38,7 @@ const Layout = () => {
 
   return (
     <div>
-      <div className="flex">
+      <div className="md:p-0  flex">
         <div
           className={`${
             !open
@@ -45,12 +46,42 @@ const Layout = () => {
               : `w-full absolute  sm:w-3/6   sm:static md:w-72`
           }  h-screen z-10 border-r-2 drop-shadow-lg bg-white duration-300`}
         >
-          <div>
+          <div className={`${!open ? ` ` : ` sm:flex gap-3 text-center`}`}>
             <div
               className={` ${
                 !open
-                  ? `pt-8 pb-6 size-10 px-1 sm:px-1.5 sm:size-20 sm:w-full `
-                  : `  py-6 `
+                  ? `sm:fixed bg-none sm:visible invisible left-5 sm:left-[92px]  sm:bottom-60 sm:bg-orange  rounded-full cursor-pointer    `
+                  : ` hidden  `
+              }       p-2`}
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
+              <TbLayoutSidebarRightCollapse
+                className={`${
+                  !open ? `text-2xl sm:text-amber-50 text-black` : ` text-3xl`
+                }  font-normal`}
+              />
+            </div>
+            <div
+              className={` ${
+                !open ? ` sm:hidden` : ` static  rotate-180 sm:mt-2   `
+              }  w-fit flex justify-start items-center  duration-500    p-2`}
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
+              <IoMdMenu
+                className={`${
+                  !open ? `text-2xl sm:text-amber-50 text-black` : ` text-3xl`
+                }  font-normal`}
+              />
+            </div>
+            <div
+              className={` ${
+                !open
+                  ? `sm:visible invisible sm:pt-8 sm: pb-6 size-10 px-1 sm:px-1.5 sm:size-20 sm:w-full `
+                  : ` pb-2 sm:py-6 `
               } flex justify-center items-center`}
             >
               <img src={Logo} alt="Logo" />
@@ -63,8 +94,8 @@ const Layout = () => {
                 <NavLink to={menu.to}>
                   <li
                     className={`${
-                      !open ? `justify-center` : `pl-10`
-                    } cursor-pointer text-md flex items-center font-medium font-Source Sans Pro gap-x-3 p-3 mt-1  transition-all duration-300 hover:bg-blue-100 hover:text-blue-500  ${
+                      !open ? `justify-center  ` : `pl-12`
+                    } cursor-pointer text-md flex gap-2 items-center font-medium font-Source Sans Pro gap-y-3 p-3 mt-1  transition-all duration-300 hover:bg-blue-100 hover:text-blue-500  ${
                       location.pathname.startsWith(menu.to) ||
                       (menu.to === "/tickets" &&
                         location.pathname.startsWith(
@@ -75,7 +106,7 @@ const Layout = () => {
                         ? `${
                             open
                               ? "bg-select-sidebar text-base   border-r-4 border-orange  text-blue-500 transition-all duration-300"
-                              : "md:bg-select-sidebar md:text-primary border-r-4 border-orange text-blue-500 md:transition-all md:duration-500 duration-700"
+                              : "bg-select-sidebar text-primary border-r-4 border-orange text-blue-500 md:transition-all md:duration-500 duration-700"
                           } `
                         : " text-table-text font-Source_Sans_Pro font-normal text-base  "
                     }`}
@@ -88,27 +119,6 @@ const Layout = () => {
               </React.Fragment>
             ))}
           </ul>
-          <div
-            className={` ${
-              !open
-                ? ` justify-center  hover:bg-slate-200  `
-                : `  rotate-180   mx-2 `
-            } fixed w-full flex justify-start items-center  duration-500   bottom-2 p-2`}
-            onClick={() => {
-              setOpen(!open);
-            }}
-          >
-            <TbLayoutSidebarRightCollapse
-              className={`${
-                !open ? `text-black text-2xl` : ` text-3xl`
-              }  font-normal`}
-            />
-            <span
-              className={`${!open ? `hidden ` : `rotate-180 text-xl px-3`} `}
-            >
-              Close Tab
-            </span>
-          </div>
         </div>
         <div className="w-full h-screen overflow-auto bg-slate-100  ">
           <Navbar />

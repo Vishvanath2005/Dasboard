@@ -42,15 +42,15 @@ const Layout = () => {
         <div
           className={`${
             !open
-              ? ` md:w-32 sm:relative  sm:w-1/6`
-              : `w-full absolute  sm:w-3/6   sm:static md:w-72`
+              ? ` md:w-32 sm:relative w-0 `
+              : `w-2/3 absolute  sm:w-3/6   sm:static md:w-72`
           }  h-screen z-10 border-r-2 drop-shadow-lg bg-white duration-300`}
         >
           <div className={`${!open ? ` ` : ` sm:flex gap-3 text-center`}`}>
             <div
               className={` ${
                 !open
-                  ? `sm:fixed bg-none sm:visible invisible left-5 sm:left-[92px]  sm:bottom-60 sm:bg-orange  rounded-full cursor-pointer    `
+                  ? `sm:fixed bg-none sm:visible collapse left-5 sm:left-[92px]  sm:bottom-60 sm:bg-orange  rounded-full cursor-pointer    `
                   : ` hidden  `
               }       p-2`}
               onClick={() => {

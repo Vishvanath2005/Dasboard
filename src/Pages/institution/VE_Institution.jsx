@@ -41,13 +41,13 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
   return (
     <div>
       {isFirstModalOpen && (
-        <div className="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg shadow-lg w-full max-w-md">
+        <div className="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50" onClick={handleCloseFirstModal}>
+          <div className="bg-white rounded-lg shadow-lg w-72 h-fit sm:w-96">
             <div className=" items-center relative border-b px-4 py-8">
               <p className="text-2xl text-center font-Source_Sans_Pro font-medium">
                 View {title}
               </p>
-              <div className="z-20 absolute -top-6 left-[94%]">
+              <div className="z-20 absolute -top-6 sm:left-[94%] -right-5 sm:right-0">
                 <button
                   className=" text-3xl p-3 rounded-full shadow-lg hover:bg-red-600 hover:text-white text-red-600 bg-white w-fit items-center"
                   onClick={onClose}
@@ -56,7 +56,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                 </button>
               </div>
             </div>
-            <div className="grid grid-cols-6 items-center p-3">
+            <div className="sm:grid grid-cols-6  items-center p-3">
               {onDataSend &&
                 [
                   { header: "Institution ID", value: onDataSend.id },
@@ -68,10 +68,10 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                   { header: "SPOC Phone", value: onDataSend.spocPhoneNumber },
                 ].map(({ header, value }) => (
                   <React.Fragment key={header}>
-                    <label className="p-3 col-span-3  font text-start">
-                      {header}
+                    <label className="p-3 sm:col-span-3  font text-start">
+                      {header} :
                     </label>
-                    <p className="p-3 col-span-3 text-sm text-gray-500 text-end">
+                    <p className="p-3 sm:col-span-3 text-sm text-gray-500 text-start sm:text-end">
                       {value}
                     </p>
                   </React.Fragment>
@@ -96,13 +96,13 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
       )}
 
       {isSecondModalOpen && (
-        <div className="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg shadow-lg w-full max-w-md">
-            <div className=" items-center relative border-b px-4 py-6">
+        <div className="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50" onClick={handleCloseSecondModal}>
+          <div className="bg-white rounded-lg shadow-lg w-72 h-fit sm:w-96">
+          <div className=" items-center relative border-b px-4 py-6">
               <p className="text-xl text-center font-Source_Sans_Pro font-medium">
                 Edit {title}
               </p>
-              <div className="z-20 absolute -top-6 left-[94%]">
+              <div className="z-20 absolute -top-6 sm:left-[94%] -right-5 sm:right-0 ">
                 <button
                   className=" text-3xl p-3 rounded-full shadow-lg hover:bg-red-300 hover:text-white text-red-600 bg-white w-fit items-center"
                   onClick={onClose}
@@ -112,8 +112,8 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
               </div>
             </div>
             <div className="flex items-center justify-center p-4">
-              <form onSubmit={handleSubmit(onSubmit)} className="grid gap-6">
-                <div className="grid grid-cols-3 gap-4 items-center">
+              <form onSubmit={handleSubmit(onSubmit)} className="grid sm:gap-6 gap-3">
+                <div className="grid sm:grid-cols-3 grid-row  sm:gap-4 gap-2 items-center">
                   <label
                     htmlFor="name"
                     className="col-span-1 text-  text-gray-700"
@@ -139,7 +139,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     )}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4 items-center">
+                <div className="grid sm:grid-cols-3 grid-row sm:gap-4 gap-2 items-center">
                   <label htmlFor="email" className="col-span-1  text-gray-700">
                     Email
                   </label>
@@ -162,7 +162,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     )}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4  items-center">
+                <div className="grid sm:grid-cols-3 grid-row sm:gap-4 gap-2  items-center">
                   <label htmlFor="address" className="col-span-1 text-gray-700">
                     Address
                   </label>
@@ -185,7 +185,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     )}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4  items-center">
+                <div className="grid sm:grid-cols-3 grid-row sm:gap-4 gap-2  items-center">
                   <label
                     htmlFor="district"
                     className="col-span-1 text-gray-700"
@@ -211,7 +211,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     )}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4  items-center">
+                <div className="grid sm:grid-cols-3 grid-row sm:gap-4 gap-2  items-center">
                   <label htmlFor="state" className="col-span-1 text-gray-700">
                     State
                   </label>
@@ -234,7 +234,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     )}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4  items-center">
+                <div className="grid sm:grid-cols-3 grid-row sm:gap-4 gap-2 items-center">
                   <label
                     htmlFor="SPOC_name"
                     className="col-span-1 text-gray-700"
@@ -260,7 +260,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                     )}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4  items-center">
+                <div className="grid sm:grid-cols-3 grid-row sm:gap-4 gap-2  items-center">
                   <label
                     htmlFor="SPOC_phone"
                     className="col-span-1 text-gray-700"

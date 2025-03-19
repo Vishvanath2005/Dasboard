@@ -32,7 +32,7 @@ const Title = ({
         </button>
       )}
       {showaccessbutton && (
-        <button className="border px-6 py-2 rounded-md bg-orange text-lg text-white font-base">
+        <button className="border sm:px-6 px-3 sm:py-2 py-1   rounded-md bg-orange text-lg text-white font-base">
           Add Access
         </button>
       )}
@@ -60,7 +60,7 @@ const Title = ({
       )}
       {showfollowup && (
         <button
-          className="border px-6 py-2 rounded-md bg-orange text-lg text-white font-Source_Sans_Pro"
+          className="border px-6 py-2 rounded-md bg-orange text-base text-white font-Source_Sans_Pro"
           onClick={onOpen}
         >
           Add Follow-up

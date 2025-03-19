@@ -50,7 +50,7 @@ const Institution = () => {
   return (
     <div className="px-3 py-3">
       <Title title="Institution" onOpen={OpenAddModal} />
-      <div className="overflow-x-auto z-0 h-80 sm:h-[480px] drop-shadow-lg">
+      <div className="overflow-x-auto z-0 h-[590px] sm:h-[480px] drop-shadow-lg">
         <table className="w-full min-w-[900px] md:table rounded-lg border border-gray-200">
           <thead className="bg-gradient-to-b  from-slate-100 to-gray-200 border-2 rounded-t-lg">
             <tr>

@@ -12,12 +12,17 @@ import { FiUserPlus } from "react-icons/fi";
 import { TbMessagePlus } from "react-icons/tb";
 import { RiVipDiamondLine } from "react-icons/ri";
 import { TbSettings } from "react-icons/tb";
+import { Tooltip } from "react-tooltip";
 import Navbar from "./Navbar";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 
 const Layout = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
+  const toggle = () => {
+    setTimeout(1500);
+    setOpen(!open);
+  };
 
   const Menus = [
     { title: "Dashboard", icon: <LuLayoutDashboard />, to: "/dashboard" },
@@ -26,7 +31,6 @@ const Layout = () => {
       icon: <HiOutlineBuildingOffice2 />,
       to: "/insitution",
     },
-    { title: "Leads", icon: <GoPeople />, to: "/leads" },
     { title: "Enquires", icon: <TbUserQuestion />, to: "/enquires" },
     { title: "Tickets", icon: <TbTicket />, to: "/tickets" }, // Main Tickets route
     { title: "Packages", icon: <PiPackageDuotone />, to: "/packages" },
@@ -46,23 +50,13 @@ const Layout = () => {
               : `w-2/3 absolute  sm:w-3/6   sm:static md:w-72`
           }  h-screen z-10 border-r-2 drop-shadow-lg bg-white duration-300`}
         >
-          <div className={`${!open ? ` ` : ` sm:flex gap-3 text-center`}`}>
-            <div
-              className={` ${
-                !open
-                  ? `sm:fixed bg-none sm:visible collapse left-5 sm:left-[92px]  sm:bottom-60 sm:bg-orange  rounded-full cursor-pointer    `
-                  : ` hidden  `
-              }       p-2`}
-              onClick={() => {
-                setOpen(!open);
-              }}
-            >
-              <TbLayoutSidebarRightCollapse
-                className={`${
-                  !open ? `text-2xl sm:text-amber-50 text-black` : ` text-3xl`
-                }  font-normal`}
-              />
-            </div>
+          <div
+            className={`${
+              !open
+                ? ` flex flex-col justify-center items-center`
+                : ` sm:flex gap-3 text-center`
+            }`}
+          >
             <div
               className={` ${
                 !open ? ` sm:hidden` : ` static  rotate-180 sm:mt-2   `
@@ -85,6 +79,22 @@ const Layout = () => {
               } flex justify-center items-center`}
             >
               <img src={Logo} alt="Logo" />
+            </div>
+            <div
+              className={` ${
+                !open
+                  ? ` bg-none sm:visible  collapse     items-center flex justify-start  cursor-pointer    `
+                  : ` hidden  `
+              }      border-y p-2`}
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
+              <TbLayoutSidebarRightCollapse
+                className={`${
+                  !open ? `text-2xl  text-black` : ` text-3xl`
+                }  font-normal`}
+              />
             </div>
           </div>
 
@@ -110,18 +120,27 @@ const Layout = () => {
                           } `
                         : " text-table-text font-Source_Sans_Pro font-normal text-base  "
                     }`}
+                    data-tooltip-id={`tooltip-${index}`}
+                    data-tooltip-content={menu.title}
                     key={index}
+                    onClick={toggle}
                   >
-                    <p className="sm:text-xl text-base">{menu.icon}</p>
+                    <p className="sm:text-xl text-base">{menu.icon} </p>
+
                     <p className={`${!open && `hidden `}`}>{menu.title}</p>
                   </li>
                 </NavLink>
+                <Tooltip
+                  className={`${open && `hidden`}`}
+                  id={`tooltip-${index}`}
+                  place="right"
+                />
               </React.Fragment>
             ))}
           </ul>
         </div>
         <div className="w-full h-screen overflow-auto bg-slate-100  ">
-          <Navbar open={open} setOpen={setOpen}/>
+          <Navbar open={open} setOpen={setOpen} />
           <Suspense>
             <Outlet />
           </Suspense>

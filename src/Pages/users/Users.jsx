@@ -14,7 +14,7 @@ const Users = () => {
   const [addModal, setAddModal] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
   const navigate = useNavigate();
-  const itemsPerPage = 5;
+  const itemsPerPage = 10;
 
   const OpenAddModal = () => setAddModal(true);
   const CloseAddModal = () => setAddModal(false);
@@ -38,11 +38,11 @@ const handleUT =()=>{
   };
 
   return (
-    <div className="px-6 py-3">
+    <div className="px-3 py-3">
       <Title title="Users" onOpen={OpenAddModal}/>
-      <div className="overflow-x-auto no-scrollbar drop-shadow-lg">
-        <table className="w-full items-center hidden md:table rounded-lg border border-gray-200 overflow-hidden">
-          <thead className="bg-gradient-to-b from-slate-100 to-gray-200 border-2 rounded-t-lg">
+      <div className="overflow-x-auto z-0 h-[590px] sm:h-[480px] drop-shadow-lg">
+      <table className="w-full min-w-[900px] md:table rounded-lg border border-gray-200">
+      <thead className="bg-gradient-to-b from-slate-100 to-gray-200 border-2 rounded-t-lg">
             <tr>
               {[
                 "S.No",

@@ -10,11 +10,11 @@ import VE_Interview from "./VE_Interview";
 const Interview = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [view_editModal, setView_editModal] = useState(false);
-   const [selectedData, setSelectedData] = useState(null);
+  const [selectedData, setSelectedData] = useState(null);
   const OpenVEModal = () => setView_editModal(true);
   const CloseVEModal = () => setView_editModal(false);
   const [datas, setDatas] = useState([]);
-  const itemsPerPage = 5;
+  const itemsPerPage = 10;
   useEffect(() => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const selectedData = data.slice(startIndex, startIndex + itemsPerPage);
@@ -31,21 +31,21 @@ const Interview = () => {
   };
 
   useEffect(() => {
-      if (selectedData) {
-        console.log("Selected data refreshed:", selectedData);
-      }
-    }, [selectedData]);
+    if (selectedData) {
+      console.log("Selected data refreshed:", selectedData);
+    }
+  }, [selectedData]);
 
-    const onSubmit = (data) => {
-      console.log("Form Data:", data);
-      CloseVEModal();
-    };
+  const onSubmit = (data) => {
+    console.log("Form Data:", data);
+    CloseVEModal();
+  };
 
   return (
-    <div className="px-6 py-3">
+    <div className="px-3 py-3">
       <Title title="Interview" showbutton={false} />
-      <div className="overflow-x-auto no-scrollbar drop-shadow-lg">
-        <table className="w-full items-center hidden md:table rounded-lg border border-gray-200 overflow-hidden">
+      <div className="overflow-x-auto z-0 h-[590px] sm:h-[480px] drop-shadow-lg">
+        <table className="w-full min-w-[900px] md:table rounded-lg border border-gray-200">
           <thead className="bg-gradient-to-b from-slate-100 to-gray-200 border-2 rounded-t-lg">
             <tr>
               {[
@@ -107,10 +107,13 @@ const Interview = () => {
                 </td>
                 <td>
                   <div className="flex justify-center items-center gap-3">
-                    <button className="bg-green-100 text-green-700 rounded-md p-1.5 hover:bg-green-200"
-                    onClick={()=>{OpenVEModal();
-                      handleSelectData(interview.id);
-                    }}>
+                    <button
+                      className="bg-green-100 text-green-700 rounded-md p-1.5 hover:bg-green-200"
+                      onClick={() => {
+                        OpenVEModal();
+                        handleSelectData(interview.id);
+                      }}
+                    >
                       <TbEye className="text-lg" />
                     </button>
                     <button

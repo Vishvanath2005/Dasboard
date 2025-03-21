@@ -39,11 +39,10 @@ const Pagination = ({
   };
 
   return (
-    <div className="flex sm:justify-between flex-col sm:flex-row gap-3 py-2  text-center justify-center items-center mt-3 px-3 ">
+    <div className="flex sm:justify-between flex-col sm:flex-row gap-3 py-2  text-center justify-center items-center mt-3 ">
       <div className="ml-6">
         <p className="text-sm sm:text-base text-gray-500">{displayText}</p>
       </div>
-
       <div className="flex items-center justify-center gap-2">
         <button
           className="flex items-center gap-2 text-orange px-4 py-2 rounded-l-md"

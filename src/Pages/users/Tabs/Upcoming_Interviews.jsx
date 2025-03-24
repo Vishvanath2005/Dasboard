@@ -4,12 +4,14 @@ import data from "../../../json_data/Upcoming_InterviewData.json";
 import { HiArrowsUpDown } from "react-icons/hi2";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Pagination from "../../../components/Pagination";
+import { useNavigate } from "react-router-dom";
 
 const Upcoming_Interviews = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedData, setSelectedData] = useState(null);
   const [selectedId, setSelectedId] = useState([]);
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
   const itemsPerPage = 7;
 
   useEffect(() => {
@@ -21,18 +23,10 @@ const Upcoming_Interviews = () => {
     setCurrentPage(pageNumber);
   };
 
-  const handleRowClick = (id) => {
-    const selected = data.find(
-      (Upcoming_Interviews) => subscription.subscriptionID === id
-    );
-    setSelectedData(selected);
-    setSelectedId(id);
-    console.log(selected);
-  };
-
-  const handleDelete = (id) => {
-    console.log(`Delete row with id: ${id}`);
-  };
+  const handleview= ()=>{
+    navigate()
+  }
+ 
 
   return (
     <div>

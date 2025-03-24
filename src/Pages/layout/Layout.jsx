@@ -73,7 +73,7 @@ const Layout = () => {
             >
               <IoMdMenu
                 className={`${
-                  !open ? `text-2xl sm:text-amber-50 text-black` : ` text-3xl`
+                  !open ? `text-2xl sm:text-amber-50 text-black` : ` cursor-pointer text-3xl`
                 }  font-normal`}
               />
             </div>

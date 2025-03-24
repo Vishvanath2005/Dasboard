@@ -24,7 +24,7 @@ const AddLeads = ({ onClose }) => {
         <div className="bg-white rounded-lg shadow-lg w-full max-w-md">
           <div className=" items-center relative border-b px-4 py-6">
             <p className="text-xl text-center font-Source_Sans_Pro font-medium">
-              Add Institution
+              Add Leads
             </p>
             <div className="z-20 absolute -top-5 left-[95%]">
               <button

@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import Title from "../../components/Title";
 import User_Dashboard from "./tabs/User_Dashboard";
 import Resume from "./tabs/Resume";
-import Upcoming_Interview from "./tabs/Upcoming_Interviews"
-import Reports from "./tabs/Reports";
+import Upcoming_Interview from "./Tabs/Upcoming_Interviews"
+import Reports from "./Tabs/Reports";
+import View_Reports from "./Tabs/View_Reports";
 
 const UsersTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -12,6 +13,7 @@ const UsersTabs = () => {
     "Resume Builder Form",
     "Upcoming Interviews",
     "Reports",
+    "View_Reports"
   ];
 
   return (
@@ -37,6 +39,7 @@ const UsersTabs = () => {
         {activeTab === 1 && <div><Resume /></div>}
         {activeTab === 2 && <div> <Upcoming_Interview /> </div>}
         {activeTab === 3 && <div><Reports /></div>}
+        {activeTab === 4 && <div><View_Reports /></div>}
       </div>
     </div>
   );

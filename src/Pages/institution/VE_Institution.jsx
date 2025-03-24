@@ -287,7 +287,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                   </div>
                 </div>
 
-                <div className="flex justify-center -mx-7 pt-4 border-t gap-3 items-center">
+                <div className="flex justify-center -mx-4 pt-4 border-t gap-3 items-center">
                   <button
                     type="button"
                     onClick={Back}

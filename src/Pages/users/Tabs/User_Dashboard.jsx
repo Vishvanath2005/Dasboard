@@ -10,7 +10,6 @@ const User_Dashboard = () => {
     <div> <div className="no-scrollbar overflow-auto mb-10 h-scren">
     <div className="grid grid-cols-3 grid-rows-3 gap-1.5">
       <div className="row-span-2 bg-white rounded-lg drop-shadow-md ">
-        {" "}
         <div className="flex mx-8 my-6 gap-4">
           <h1 className="bg-select-sidebar rounded-full w-24 h-24"></h1>
           <p className=" grid gap-1.5 mx-2 my-6">

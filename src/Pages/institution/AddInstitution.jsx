@@ -49,7 +49,7 @@ const AddInstitution = ({ onClose }) => {
                     id="name"
                     type="text"
                     {...register("institution_name")}
-                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.institution_name
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -71,7 +71,7 @@ const AddInstitution = ({ onClose }) => {
                     id="email"
                     type="email"
                     {...register("email")}
-                    className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.email
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -93,7 +93,7 @@ const AddInstitution = ({ onClose }) => {
                     id="address"
                     type="text"
                     {...register("address")}
-                    className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.address
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -115,7 +115,7 @@ const AddInstitution = ({ onClose }) => {
                     id="district"
                     type="text"
                     {...register("district")}
-                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.district
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -137,7 +137,7 @@ const AddInstitution = ({ onClose }) => {
                     id="state"
                     type="text"
                     {...register("state")}
-                    className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.state
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -159,7 +159,7 @@ const AddInstitution = ({ onClose }) => {
                     id="SPOC_name"
                     type="text"
                     {...register("SPOC_name")}
-                    className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.SPOC_name
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -184,7 +184,7 @@ const AddInstitution = ({ onClose }) => {
                     id="SPOC_phone"
                     type="text"
                     {...register("SPOC_phone")}
-                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.SPOC_phone
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"

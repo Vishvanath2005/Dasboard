@@ -54,7 +54,7 @@ const Layout = () => {
             !open
               ? ` md:w-32 sm:relative hidden sm:block  `
               : `w-2/3 absolute  sm:z-10 sm:w-3/6  sm:static md:w-72`
-          }  h-screen z-10 border-r-2 drop-shadow-lg bg-white duration-300`}
+          }  h-screen z-10  drop-shadow-lg bg-white duration-300`}
         >
           <div
             className={`${

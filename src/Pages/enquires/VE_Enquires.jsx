@@ -143,7 +143,7 @@ const VE_Enquires = ({ title, onClose, onDataSend }) => {
                       type="text"
                       placeholder={onDataSend.name}
                       {...register("institution_name")}
-                      className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.name
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -166,7 +166,7 @@ const VE_Enquires = ({ title, onClose, onDataSend }) => {
                       type="text"
                       placeholder={onDataSend.phone}
                       {...register("phone")}
-                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.phone
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -189,7 +189,7 @@ const VE_Enquires = ({ title, onClose, onDataSend }) => {
                       type="email"
                       placeholder={onDataSend.email}
                       {...register("email")}
-                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.email
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -215,7 +215,7 @@ const VE_Enquires = ({ title, onClose, onDataSend }) => {
                       type="text"
                       placeholder={onDataSend.institution}
                       {...register("institution")}
-                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.address
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -238,7 +238,7 @@ const VE_Enquires = ({ title, onClose, onDataSend }) => {
                       type="text"
                       placeholder={onDataSend.subject}
                       {...register("subject")}
-                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.subject
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -259,7 +259,7 @@ const VE_Enquires = ({ title, onClose, onDataSend }) => {
                     <select
                       id="status"
                       {...register("status")}
-                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.status
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -290,7 +290,7 @@ const VE_Enquires = ({ title, onClose, onDataSend }) => {
                       type="date"
                       placeholder={onDataSend.date}
                       {...register("date")}
-                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.date
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -313,7 +313,7 @@ const VE_Enquires = ({ title, onClose, onDataSend }) => {
                       placeholder={onDataSend.note}
                       {...register("note")}
                       rows="4"
-                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.note
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"

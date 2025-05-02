@@ -126,7 +126,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                       type="text"
                       placeholder={`${onDataSend.institutionName}`}
                       {...register("institution_name")}
-                      className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.institution_name
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -149,7 +149,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                       type="email"
                       placeholder={`${onDataSend.email}`}
                       {...register("email")}
-                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.email
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -172,7 +172,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                       type="text"
                       placeholder={`${onDataSend.address}`}
                       {...register("address")}
-                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.address
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -198,7 +198,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                       type="text"
                       placeholder={`${onDataSend.district}`}
                       {...register("district")}
-                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.district
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -221,7 +221,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                       type="text"
                       placeholder={`${onDataSend.state}`}
                       {...register("state")}
-                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.state
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -247,7 +247,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                       type="text"
                       placeholder={`${onDataSend.spoc}`}
                       {...register("SPOC_name")}
-                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.SPOC_name
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"
@@ -273,7 +273,7 @@ const VE_Institution = ({ title, onClose, onDataSend }) => {
                       type="text"
                       placeholder={`${onDataSend.spocPhoneNumber}`}
                       {...register("SPOC_phone")}
-                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.SPOC_phone
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"

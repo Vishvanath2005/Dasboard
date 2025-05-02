@@ -35,7 +35,7 @@ const Packages = () => {
         {data.map((row) => (
           <div
             key={row.id}
-            className={`md:col-span-3 col-span-12 sm:col-span-6 p-4 py-6 rounded-lg border-2 shadow-lg bg-white gap-4`}
+            className={`md:col-span-3 col-span-12 sm:col-span-6 p-4 py-6 rounded-lg  shadow-lg bg-white gap-4`}
           >
             <div className="flex justify-between mb-2 items-center">
               <p

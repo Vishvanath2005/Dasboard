@@ -50,7 +50,7 @@ const EditLeads = ({title,  onSendData, onClose }) => {
                     type="text"
                     placeholder={onSendData.complaint_raised_from}
                     {...register("complaint_raised_from")}
-                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.complaint_raised_from
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -76,7 +76,7 @@ const EditLeads = ({title,  onSendData, onClose }) => {
                     type="text"
                     placeholder={onSendData.email}
                     {...register("email")}
-                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.email
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -103,7 +103,7 @@ const EditLeads = ({title,  onSendData, onClose }) => {
                     type="text"
                     placeholder={onSendData.address}
                     {...register("address")}
-                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.address
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -129,7 +129,7 @@ const EditLeads = ({title,  onSendData, onClose }) => {
                     type="text"
                     placeholder={onSendData.city}
                     {...register("city")}
-                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.city
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -155,7 +155,7 @@ const EditLeads = ({title,  onSendData, onClose }) => {
                     type="text"
                     placeholder={onSendData.state}
                     {...register("state")}
-                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.state
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -178,7 +178,7 @@ const EditLeads = ({title,  onSendData, onClose }) => {
                     placeholder={onSendData.note}
                     {...register("note")}
                     rows="4"
-                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.note
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"

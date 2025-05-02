@@ -48,7 +48,7 @@ const Enquires = () => {
       <Title title="Enquires" showbutton={false} />
       <div className="overflow-x-auto z-0 h-[590px] sm:h-[480px] drop-shadow-lg">
       <table className="w-full min-w-[900px] md:table rounded-lg border border-gray-200">
-      <thead className="bg-gradient-to-b from-slate-100 to-gray-200 border-2 rounded-t-lg">
+      <thead className="bg-linear-to-b from-slate-100 to-gray-200 rounded-t-lg">
             <tr>
               {[
                 "S.No",
@@ -72,7 +72,7 @@ const Enquires = () => {
             {data.map((row, index) => (
               <tr
                 key={row.id}
-                className="text-sm text-center bg-white text-table-text border-b-2 last:rounded-b-lg"
+                className="text-sm text-center bg-white text-table-text border-b  last:rounded-b-lg"
               >
                 <td className="py-3">
                   <p>{(currentPage - 1) * itemsPerPage + index + 1}</p>

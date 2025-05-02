@@ -11,7 +11,7 @@ const Navbar = ({ open, setOpen, hasnotification,sethasnotification }) => {
         <div
           className="w-fit flex justify-start items-center duration-500"
           onClick={() => {
-            setOpen(true); // Ensure it opens the sidebar
+            setOpen(true); 
           }}
         >
           <IoMdMenu
@@ -25,13 +25,13 @@ const Navbar = ({ open, setOpen, hasnotification,sethasnotification }) => {
         </div>
       </span>
       <div className="font-Source Sans Pro  ">
-        <div className="md:w-72 sm:w-60 w-32 flex   gap-1.5 rounded-lg border bg-white sm:p-2  pl-1 items-center  ">
+        <div className="md:w-72 sm:w-60 w-32 flex   gap-1.5 rounded-lg  bg-white sm:p-2  pl-1 items-center  ">
           <IoSearchOutline className="sm:text-xl text-sm text-gray-400 font-semibold" />
           <input
             type="text"
             name="search"
             id="serarch"
-            className="w-full text-sm sm:text-base h-7 sm:h-6 rounded-lg border-white outline-none "
+            className="w-full text-sm sm:text-base h-7 sm:h-8  rounded-lg border-white outline-hidden "
             placeholder="Search here..."
           />
         </div>

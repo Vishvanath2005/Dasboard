@@ -47,8 +47,8 @@ const Leads = () => {
     <div className="px-3 py-3">
       <Title title="Leads" onOpen={OpenAddModal}/>
       <div className="overflow-x-auto z-0 h-[590px] sm:h-[480px] drop-shadow-lg">
-      <table className="w-full min-w-[900px] md:table rounded-lg border border-gray-200">
-      <thead className="bg-gradient-to-b from-slate-100 to-gray-200 border-2 rounded-t-lg">
+      <table className="w-full min-w-[900px] md:table rounded-lg  border-gray-200">
+      <thead className="bg-linear-to-b from-slate-100 to-gray-200 rounded-t-lg">
             <tr>
               {[
                 "S.No",
@@ -71,7 +71,7 @@ const Leads = () => {
             {paginatedData.map((row, index) => (
               <tr
                 key={row.id}
-                className={`text-sm text-center bg-white text-table-text border-b-2 
+                className={`text-sm text-center bg-white text-table-text border-b
                   ${
                     selectedId === row.id ? "bg-gray-200" : "hover:bg-gray-100"
                   } 

@@ -47,7 +47,7 @@ const EditPackages = ({ onClose, onSendData }) => {
                   type="text"
                   placeholder={onSendData.id}
                   {...register("id")}
-                  className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                  className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-hidden focus:ring-2 ${
                     errors.id
                       ? "border-red-500 focus:ring-red-300"
                       : "border-gray-300 focus:ring-blue-300"
@@ -71,7 +71,7 @@ const EditPackages = ({ onClose, onSendData }) => {
                   type="text"
                   placeholder={onSendData.packageName}
                   {...register("packageName")}
-                  className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                  className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-hidden focus:ring-2 ${
                     errors.packageName
                       ? "border-red-500 focus:ring-red-300"
                       : "border-gray-300 focus:ring-blue-300"
@@ -94,7 +94,7 @@ const EditPackages = ({ onClose, onSendData }) => {
                   type="text"
                   placeholder={onSendData.pricing}
                   {...register("pricing")}
-                  className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                  className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                     errors.pricing
                       ? "border-red-500 focus:ring-red-300"
                       : "border-gray-300 focus:ring-blue-300"
@@ -116,7 +116,7 @@ const EditPackages = ({ onClose, onSendData }) => {
                   id="status"
                   defaultValue={onSendData.status}
                   {...register("status")}
-                  className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                  className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                     errors.status
                       ? "border-red-500 focus:ring-red-300"
                       : "border-gray-300 focus:ring-blue-300"
@@ -142,7 +142,7 @@ const EditPackages = ({ onClose, onSendData }) => {
                   type="text"
                   placeholder={onSendData.credit}
                   {...register("credit")}
-                  className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                  className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                     errors.credit
                       ? "border-red-500 focus:ring-red-300"
                       : "border-gray-300 focus:ring-blue-300"
@@ -165,7 +165,7 @@ const EditPackages = ({ onClose, onSendData }) => {
                   type="text"
                   placeholder={onSendData.lastUpdate}
                   {...register("lastUpdate")}
-                  className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                  className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                     errors.lastUpdate
                       ? "border-red-500 focus:ring-red-300"
                       : "border-gray-300 focus:ring-blue-300"
@@ -188,7 +188,7 @@ const EditPackages = ({ onClose, onSendData }) => {
                   placeholder={onSendData.description}
                   {...register("description")}
                   rows="4"
-                  className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                  className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                     errors.description
                       ? "border-red-500 focus:ring-red-300"
                       : "border-gray-300 focus:ring-blue-300"

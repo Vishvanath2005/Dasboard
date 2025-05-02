@@ -45,7 +45,7 @@ const Title = ({
             id="assign-dropdown"
             value={selectedOption}
             onChange={handleAssignChange}
-            className="border rounded-md px-3 py-1 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border rounded-md px-3 py-1 text-gray-600 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
           >
             <option value="" disabled>
               name

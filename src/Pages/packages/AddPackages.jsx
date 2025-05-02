@@ -50,7 +50,7 @@ const AddPackages = ({ onClose }) => {
                     type="text"
                     placeholder="Enter your Package name"
                     {...register("packages_name")}
-                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.packages_name
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -73,7 +73,7 @@ const AddPackages = ({ onClose }) => {
                     type="text"
                     placeholder="Enter Pricing"
                     {...register("pricing")}
-                    className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.pricing
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -96,7 +96,7 @@ const AddPackages = ({ onClose }) => {
                     type="text"
                     placeholder="Enter your Credit value"
                     {...register("credit")}
-                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.credit
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -119,7 +119,7 @@ const AddPackages = ({ onClose }) => {
                       placeholder="Description"
                       {...register("note")}
                       rows="4"
-                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                      className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                         errors.note
                           ? "border-red-500 focus:ring-red-300"
                           : "border-gray-300 focus:ring-blue-300"

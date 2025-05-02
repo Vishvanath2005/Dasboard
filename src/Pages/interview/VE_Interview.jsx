@@ -234,7 +234,7 @@ const VE_Interview = ({ title, onClose, onDataSend }) => {
                   <select
                     id="slot_Time"
                     {...register("slot_Time")}
-                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.slot_Time
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -261,7 +261,7 @@ const VE_Interview = ({ title, onClose, onDataSend }) => {
                   <select
                     id="status"
                     {...register("status")}
-                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.status
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"

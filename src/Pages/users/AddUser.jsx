@@ -59,7 +59,7 @@ const AddUser = ({ onClose, title }) => {
                     <input
                       type="text"
                       placeholder="Enter your name"
-                      className="text-base text-grey outline-none border border-[#D0D5DD] rounded-md w-60 h-11 px-2"
+                      className="text-base text-grey outline-hidden border border-[#D0D5DD] rounded-md w-60 h-11 px-2"
                       {...register("name")}
                     />
                     {errors.name && (
@@ -78,7 +78,7 @@ const AddUser = ({ onClose, title }) => {
                     <input
                       type="text"
                       placeholder="Add Credits"
-                      className="col-span-2 text-base outline-none text-grey border border-[#D0D5DD] rounded-md w-60 h-11 px-2 "
+                      className="col-span-2 text-base outline-hidden text-grey border border-[#D0D5DD] rounded-md w-60 h-11 px-2 "
                       {...register("credits")}
                     />
                     {errors.credits && (
@@ -95,7 +95,7 @@ const AddUser = ({ onClose, title }) => {
                   <div className="flex flex-col">
                     <select
                       defaultValue="Select Gender"
-                      className=" col-span-2 text-base outline-none  border border-[#D0D5DD] text-grey rounded-md w-60 h-11 px-2 "
+                      className=" col-span-2 text-base outline-hidden  border border-[#D0D5DD] text-grey rounded-md w-60 h-11 px-2 "
                       {...register("gender")}
                     >
                       <option defaultValue=""> select Gender</option>
@@ -117,7 +117,7 @@ const AddUser = ({ onClose, title }) => {
                   <div className="flex  flex-col">
                     <input
                       type="date"
-                      className=" col-span-2 text-base outline-none text-grey border border-[#D0D5DD] rounded-md w-60 h-11  px-2 "
+                      className=" col-span-2 text-base outline-hidden text-grey border border-[#D0D5DD] rounded-md w-60 h-11  px-2 "
                       {...register("dateOfBirth")}
                     />
                     {errors.dateOfBirth && (
@@ -136,7 +136,7 @@ const AddUser = ({ onClose, title }) => {
                     <input
                       type="text"
                       placeholder="Add Credits"
-                      className="col-span-2 text-base outline-none text-grey border border-[#D0D5DD] rounded-md w-60 h-11 px-2 "
+                      className="col-span-2 text-base outline-hidden text-grey border border-[#D0D5DD] rounded-md w-60 h-11 px-2 "
                       {...register("age")}
                     />
                     {errors.age && (
@@ -178,7 +178,7 @@ const AddUser = ({ onClose, title }) => {
                     <input
                       type="email"
                       placeholder=" Enter your Email"
-                      className=" col-span-2 text-base outline-none text-grey border border-[#D0D5DD] w-60 rounded-md  h-11 px-2 "
+                      className=" col-span-2 text-base outline-hidden text-grey border border-[#D0D5DD] w-60 rounded-md  h-11 px-2 "
                       {...register("email")}
                     />
                     {errors.email && (
@@ -197,7 +197,7 @@ const AddUser = ({ onClose, title }) => {
                     <input
                       type="text"
                       placeholder="Enter your number"
-                      className=" col-span-2 text-base outline-none text-grey border border-[#D0D5DD] rounded-md w-60 h-11  px-2 "
+                      className=" col-span-2 text-base outline-hidden text-grey border border-[#D0D5DD] rounded-md w-60 h-11  px-2 "
                       {...register("phoneNumber")}
                     />
                     {errors.phoneNumber && (
@@ -218,7 +218,7 @@ const AddUser = ({ onClose, title }) => {
                     <input
                       type="text"
                       placeholder="Enter your Apartment"
-                      className="col-span-2 text-base outline-none text-grey border border-[#D0D5DD] rounded-md w-60 h-11 px-2 "
+                      className="col-span-2 text-base outline-hidden text-grey border border-[#D0D5DD] rounded-md w-60 h-11 px-2 "
                       {...register("apartment")}
                     />
                     {errors.apartment && (
@@ -237,7 +237,7 @@ const AddUser = ({ onClose, title }) => {
                     <input
                       type="text"
                       placeholder="Enter your City"
-                      className="col-span-2 text-base outline-none text-grey border border-[#D0D5DD] rounded-md w-60 h-11 px-2 "
+                      className="col-span-2 text-base outline-hidden text-grey border border-[#D0D5DD] rounded-md w-60 h-11 px-2 "
                       {...register("city")}
                     />
                     {errors.city && (
@@ -255,7 +255,7 @@ const AddUser = ({ onClose, title }) => {
                     <input
                       type="text"
                       placeholder="Enter your State"
-                      className="col-span-2 text-base outline-none text-grey border border-[#D0D5DD] rounded-md w-60 h-11 px-2 "
+                      className="col-span-2 text-base outline-hidden text-grey border border-[#D0D5DD] rounded-md w-60 h-11 px-2 "
                       {...register("state")}
                     />
                     {errors.state && (
@@ -273,7 +273,7 @@ const AddUser = ({ onClose, title }) => {
                     <input
                       type="text"
                       placeholder="Enter your Pincode"
-                      className="col-span-2 text-base outline-none text-grey border border-[#D0D5DD] rounded-md w-60 h-11 px-2 "
+                      className="col-span-2 text-base outline-hidden text-grey border border-[#D0D5DD] rounded-md w-60 h-11 px-2 "
                       {...register("pinCode")}
                     />
                     {errors.pinCode && (
@@ -355,7 +355,7 @@ const AddUser = ({ onClose, title }) => {
                 <textarea
                   name=""
                   id=""
-                  className="col-span-10 text-base outline-none w-full border-2 rounded-lg"
+                  className="col-span-10 text-base outline-hidden w-full border-2 rounded-lg"
                   rows={4}
                   {...register("description")}
                 ></textarea>

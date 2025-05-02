@@ -51,7 +51,7 @@ const AddFollowup = ({ title, onClose }) => {
                     id="nextFollowUp"
                     type="date"
                     {...register("nextFollowUp")}
-                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.nextFollowUp
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -74,7 +74,7 @@ const AddFollowup = ({ title, onClose }) => {
                     placeholder="Enter your Description"
                     {...register("note")}
                     rows="4"
-                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.note
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"

@@ -21,7 +21,7 @@ const View_Reports = () => {
         ].map(([title, value, icon], index) => (
           <div
             key={index}
-            className="bg-white flex p-4 rounded-lg shadow text-center col-span-3 gap-3 items-center"
+            className="bg-white flex p-4 rounded-lg shadow-sm text-center col-span-3 gap-3 items-center"
           >
             <div className="text-blue-500 p-2 bg-gray-200 rounded-full m-2">
               {icon}
@@ -63,7 +63,7 @@ const View_Reports = () => {
         </div>
         <div className="col-span-8 ">
           <table className="w-full items-center  md:table rounded-lg border border-gray-200 overflow-hidden">
-            <thead className="bg-gradient-to-b from-slate-100 to-gray-200 border-2 rounded-t-lg">
+            <thead className="bg-linear-to-b from-slate-100 to-gray-200 rounded-t-lg">
               <tr>
                 {[
                   "S.No",
@@ -80,7 +80,7 @@ const View_Reports = () => {
             </thead>
             <tbody className="rounded-lg">
               <tr
-                className={`text-sm text-center bg-white text-table-text border-b-2 
+                className={`text-sm text-center bg-white text-table-text border-b
                              "bg-gray-200" : "hover:bg-gray-100 cursor-pointer`}
               >
                 <td className="py-3">

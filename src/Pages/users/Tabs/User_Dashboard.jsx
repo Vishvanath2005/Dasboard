@@ -60,11 +60,11 @@ const User_Dashboard = () => {
           </div>
         </div>
         <div className="flex justify-center gap-2 my-1 text-sm font-normal ">
-          <p className="flex items-center justify-evenly rounded-lg bg-[#FF9500] bg-opacity-15 w-36 h-10   text-[#FF9500]">
+          <p className="flex items-center justify-evenly rounded-lg bg-[#FF9500] bg-opacity-15 w-36 h-10   text-slate-700">
             <FiPhone className="size-5" />
             0000000000
           </p>
-          <p className="flex items-center justify-evenly rounded-lg bg-blue-900 bg-opacity-15 text-blue-900 w-40 h-10">
+          <p className="flex items-center justify-evenly rounded-lg bg-blue-200 bg-opacity-15 text-slate-700 w-40 h-10">
             <MdOutlineEmail className="size-5" />
             abc@gmail.com
           </p>

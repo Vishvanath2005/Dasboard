@@ -50,7 +50,7 @@ const AddSubscription = ({ onClose, title }) => {
                     type="text"
                     placeholder="Enter your name"
                     {...register("name")}
-                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 border text-sm rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.name
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -71,7 +71,7 @@ const AddSubscription = ({ onClose, title }) => {
                   <select
                     id="category"
                     {...register("category")}
-                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.category
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -101,7 +101,7 @@ const AddSubscription = ({ onClose, title }) => {
                   <select
                     id="paymentMode"
                     {...register("paymentMode")}
-                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.paymentMode
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -134,7 +134,7 @@ const AddSubscription = ({ onClose, title }) => {
                     type="text"
                     placeholder="Enter your Transaction Details"
                     {...register("transactionDetails")}
-                    className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.transactionDetails
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -158,7 +158,7 @@ const AddSubscription = ({ onClose, title }) => {
                   <select
                     id="paymentStatus"
                     {...register("paymentStatus")}
-                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.paymentStatus
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -185,7 +185,7 @@ const AddSubscription = ({ onClose, title }) => {
                     type="text"
                     placeholder="Enter the package "
                     {...register("package")}
-                    className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4  py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.package
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"
@@ -208,7 +208,7 @@ const AddSubscription = ({ onClose, title }) => {
                     type="text"
                     placeholder="Enter the Credits"
                     {...register("credit")}
-                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 ${
+                    className={`w-full px-4 py-2.5 text-sm border rounded-lg focus:outline-hidden focus:ring-2 ${
                       errors.credit
                         ? "border-red-500 focus:ring-red-300"
                         : "border-gray-300 focus:ring-blue-300"

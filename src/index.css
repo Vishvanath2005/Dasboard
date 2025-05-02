@@ -1,5 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin 'flowbite/plugin';
+
+@source '../node_modules/flowbite/**/*.js';
+
+@theme {
+  --font-Roboto_Serif: Roboto Serif, sans serif;
+  --font-Source_Sans_Pro: Source Sans 3, serif;
+  --font-Exo: Exo, sans serif;
+
+  --color-background: #f5f7fb;
+  --color-select-sidebar: #f0f8ff;
+  --color-select-title: #3b5998;
+  --color-orange: #fd7d00;
+  --color-credits: #1366d9;
+  --color-table-text: #7d7d7d;
+  --color-user-text: #95a5a6;
+  --color-user-title-text: #2b3674;
+}
+
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 

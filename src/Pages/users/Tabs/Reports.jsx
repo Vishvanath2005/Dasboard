@@ -38,7 +38,7 @@ const Reports = () => {
     <div>
       <div className="overflow-x-auto no-scrollbar drop-shadow-lg">
         <table className="w-full items-center  md:table rounded-lg border border-gray-200 overflow-hidden">
-          <thead className="bg-gradient-to-b from-slate-100 to-gray-200 border-2 rounded-t-lg">
+          <thead className="bg-linear-to-b from-slate-100 to-gray-200 rounded-t-lg">
             <tr>
               {[
                 "S.No",
@@ -61,7 +61,7 @@ const Reports = () => {
           </thead>
           <tbody className="rounded-lg">
             <tr
-              className={`text-sm text-center bg-white text-table-text border-b-2 
+              className={`text-sm text-center bg-white text-table-text border-b 
                  "bg-gray-200" : "hover:bg-gray-100 cursor-pointer`} onClick={handleRowClick}
             >
               <td className="py-3">

@@ -27,7 +27,7 @@ const AssignTickets = () => {
       />
       {ticketData && (
         <div className="grid grid-cols-12  gap-2">
-          <div className="col-span-7 bg-white p-6 rounded-lg shadow">
+          <div className="col-span-7 bg-white p-6 rounded-lg shadow-sm">
             <p className="text-lg font-bold mb-6">Ticket Details</p>
             <div className="space-y-4">
               <div className="grid grid-cols-12 gap-4 pb-2">
@@ -65,8 +65,8 @@ const AssignTickets = () => {
                 </p>
               </div>
               <div className="flex justify-between pb-2">
-                <p className=" flex-grow">Status</p>
-                <span className="px-3 py-1 rounded-md text-sm font-semibold bg-green-100 text-green-600 flex-shrink-0">
+                <p className=" grow">Status</p>
+                <span className="px-3 py-1 rounded-md text-sm font-semibold bg-green-100 text-green-600 shrink-0">
                   {ticketData.status}
                 </span>
               </div>
@@ -79,7 +79,7 @@ const AssignTickets = () => {
               <div className="grid grid-cols-12 gap-4 items-center my-4">
                 <label className="font-medium col-span-2">Replay</label>
                 <div className="flex items-center text-end p-2 border rounded-lg w-full gap-2 col-span-10">
-                  <input type="text" className="outline-none w-full" />
+                  <input type="text" className="outline-hidden w-full" />
                   <p className="hover:bg-orange hover:rounded-full hover:p-1.5">
                     <IoCameraOutline className="text-2xl hover:text-white" />
                   </p>
@@ -91,7 +91,7 @@ const AssignTickets = () => {
             </div>
           </div>
 
-          <div className="col-span-5 bg-white rounded-lg shadow">
+          <div className="col-span-5 bg-white rounded-lg shadow-sm">
             <p className="text-lg bg-gray-200  rounded-t-lg p-4 font-bold mb-3">
               Complaint History
             </p>
